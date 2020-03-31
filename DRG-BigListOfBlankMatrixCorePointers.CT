@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037803C8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>F0</Offset>
+        <Offset>398</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>15</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035528D8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>3A0</Offset>
+        <Offset>40</Offset>
+        <Offset>278</Offset>
+        <Offset>158</Offset>
+        <Offset>68</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035528A8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>3A0</Offset>
+        <Offset>40</Offset>
+        <Offset>278</Offset>
+        <Offset>228</Offset>
+        <Offset>130</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035528D8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>3A0</Offset>
+        <Offset>40</Offset>
+        <Offset>178</Offset>
+        <Offset>220</Offset>
+        <Offset>70</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035528D0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>3A0</Offset>
+        <Offset>40</Offset>
+        <Offset>78</Offset>
+        <Offset>250</Offset>
+        <Offset>150</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035492B0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>10</Offset>
+        <Offset>2C0</Offset>
+        <Offset>390</Offset>
+        <Offset>2F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+0354A568</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>10</Offset>
+        <Offset>1A0</Offset>
+        <Offset>F8</Offset>
+        <Offset>1E0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+03543618</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>260</Offset>
+        <Offset>2C0</Offset>
+        <Offset>690</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035492C8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>260</Offset>
+        <Offset>2C0</Offset>
+        <Offset>390</Offset>
+        <Offset>F8</Offset>
+        <Offset>240</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>25</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035498B0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>4E0</Offset>
+        <Offset>418</Offset>
+        <Offset>2A0</Offset>
+        <Offset>F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+03549848</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>4E0</Offset>
+        <Offset>418</Offset>
+        <Offset>F8</Offset>
+        <Offset>20</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>27</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035583E8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>3C0</Offset>
+        <Offset>4C8</Offset>
+        <Offset>90</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>28</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+03558238</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>3C0</Offset>
+        <Offset>2F8</Offset>
+        <Offset>20</Offset>
+        <Offset>270</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>29</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035582B0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>3C0</Offset>
+        <Offset>2C8</Offset>
+        <Offset>50</Offset>
+        <Offset>30</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>30</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035582B0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>3C0</Offset>
+        <Offset>C8</Offset>
+        <Offset>78</Offset>
+        <Offset>30</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>31</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A5130</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>240</Offset>
+        <Offset>2F8</Offset>
+        <Offset>1D0</Offset>
+        <Offset>2F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A5060</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>240</Offset>
+        <Offset>2F8</Offset>
+        <Offset>120</Offset>
+        <Offset>48</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A5048</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>240</Offset>
+        <Offset>2F8</Offset>
+        <Offset>20</Offset>
+        <Offset>68</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>34</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A4F98</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>240</Offset>
+        <Offset>F8</Offset>
+        <Offset>110</Offset>
+        <Offset>2F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>35</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A5040</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>240</Offset>
+        <Offset>F8</Offset>
+        <Offset>1A0</Offset>
+        <Offset>48</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A5038</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>240</Offset>
+        <Offset>F8</Offset>
+        <Offset>20</Offset>
+        <Offset>68</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>37</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A6490</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>140</Offset>
+        <Offset>E8</Offset>
+        <Offset>2B0</Offset>
+        <Offset>F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>38</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA3B0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>270</Offset>
+        <Offset>140</Offset>
+        <Offset>28</Offset>
+        <Offset>588</Offset>
+        <Offset>F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>39</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037803C8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>F0</Offset>
+        <Offset>68</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>40</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+0378AC30</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>8A0</Offset>
+        <Offset>E8</Offset>
+        <Offset>10</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>49</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+0328F5D0</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>50</Offset>
+        <Offset>1E0</Offset>
+        <Offset>48</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>50</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037A99D0</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>158</Offset>
+        <Offset>20</Offset>
+        <Offset>108</Offset>
+        <Offset>670</Offset>
+        <Offset>50</Offset>
+        <Offset>F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>51</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+035A7D40</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>158</Offset>
+        <Offset>E8</Offset>
+        <Offset>1D0</Offset>
+        <Offset>FE0</Offset>
+        <Offset>128</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>52</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037C2D28</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>158</Offset>
+        <Offset>E8</Offset>
+        <Offset>4D0</Offset>
+        <Offset>320</Offset>
+        <Offset>330</Offset>
+        <Offset>F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>53</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037670A0</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>158</Offset>
+        <Offset>E8</Offset>
+        <Offset>650</Offset>
+        <Offset>FE0</Offset>
+        <Offset>F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>54</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+03799C50</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>28</Offset>
+        <Offset>A8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>56</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037803C8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>F0</Offset>
+        <Offset>108</Offset>
+        <Offset>1F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>58</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+033A2968</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>10</Offset>
+        <Offset>8</Offset>
+        <Offset>60</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>59</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+0369A878</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>158</Offset>
+        <Offset>F8</Offset>
+        <Offset>220</Offset>
+        <Offset>ED0</Offset>
+        <Offset>0</Offset>
+        <Offset>310</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>60</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA188</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>F0</Offset>
+        <Offset>C8</Offset>
+        <Offset>10</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>61</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA190</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>F0</Offset>
+        <Offset>F8</Offset>
+        <Offset>220</Offset>
+        <Offset>270</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>62</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA1C0</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>F0</Offset>
+        <Offset>2C8</Offset>
+        <Offset>70</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>63</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA188</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>F0</Offset>
+        <Offset>2F8</Offset>
+        <Offset>170</Offset>
+        <Offset>68</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>64</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA1C0</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>F0</Offset>
+        <Offset>2F8</Offset>
+        <Offset>220</Offset>
+        <Offset>48</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>65</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA198</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>F0</Offset>
+        <Offset>2F8</Offset>
+        <Offset>120</Offset>
+        <Offset>270</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>66</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA230</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>140</Offset>
+        <Offset>C8</Offset>
+        <Offset>30</Offset>
+        <Offset>30</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>67</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA1B8</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>140</Offset>
+        <Offset>C8</Offset>
+        <Offset>90</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>68</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA198</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>140</Offset>
+        <Offset>2C8</Offset>
+        <Offset>30</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA180</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>140</Offset>
+        <Offset>2F8</Offset>
+        <Offset>10</Offset>
+        <Offset>2F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>70</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037AA1D0</Address>
+      <Offsets>
+        <Offset>8E0</Offset>
+        <Offset>108</Offset>
+        <Offset>680</Offset>
+        <Offset>140</Offset>
+        <Offset>4C8</Offset>
+        <Offset>90</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>71</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+03799038</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>158</Offset>
+        <Offset>90</Offset>
+        <Offset>B8</Offset>
+        <Offset>8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>72</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+037803C8</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>AD8</Offset>
+        <Offset>408</Offset>
+        <Offset>1B8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>73</ID>
+      <Description>"pointerscan result"</Description>
+      <LastState Value="687542" RealAddress="1BE64194860"/>
+      <VariableType>Float</VariableType>
+      <Address>"FSD-Win64-Shipping.exe"+0379BB40</Address>
+      <Offsets>
+        <Offset>160</Offset>
+        <Offset>780</Offset>
+        <Offset>980</Offset>
+        <Offset>160</Offset>
+        <Offset>DB0</Offset>
+        <Offset>7A0</Offset>
+        <Offset>1E8</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
