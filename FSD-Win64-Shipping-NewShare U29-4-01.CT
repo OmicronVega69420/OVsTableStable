@@ -18,7 +18,7 @@
           <ID>300</ID>
           <Description>"{Global Hack - ALL CLASSES : Activate with F5}"</Description>
           <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <GroupHeader>1</GroupHeader>
           <Hotkeys>
             <Hotkey>
@@ -33,7 +33,7 @@
             <CheatEntry>
               <ID>281</ID>
               <Description>"AOB-UnlimitedMagazines"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -104,7 +104,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>284</ID>
               <Description>"AOB-UnlimitedGrenades [HOST ONLY]"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -175,7 +175,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>245</ID>
               <Description>"AOB-UnlimitedBoscoRevives [SOLO PLAY ONLY]"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -246,7 +246,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>335</ID>
               <Description>"AOB-SupplyAddsNitra"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -318,7 +318,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>337</ID>
               <Description>"AOB-InfiniteFlares"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -389,7 +389,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>416</ID>
               <Description>"AOB-InvincibleShields"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -460,7 +460,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>485</ID>
               <Description>"AOB-AlwaysSpawnCargo/Bag/MatrixEvent (Enable Before Mission Start)"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -535,7 +535,7 @@ dealloc(newmem)
           <ID>299</ID>
           <Description>"{DRILLER : Activate with F1}"</Description>
           <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <GroupHeader>1</GroupHeader>
           <Hotkeys>
             <Hotkey>
@@ -550,7 +550,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>221</ID>
               <Description>"AOB-UnlimitedSatchels [HOST ONLY]"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -621,7 +621,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>302</ID>
               <Description>"AOB-UnlimitedDrillerFuel"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -691,7 +691,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>303</ID>
               <Description>"AOB-UnlimitedDrillerFuel_2"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -761,7 +761,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>496</ID>
               <Description>"AOB-NoDrillHeat"</Description>
-              <LastState/>
+              <LastState Activated="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
   Version: 
@@ -826,6 +826,81 @@ dealloc(newmem)
 "FSD-Win64-Shipping.exe"+7A4BF5: 0F 2E CA                 -  ucomiss xmm1,xmm2
 "FSD-Win64-Shipping.exe"+7A4BF8: F3 0F 11 8B CC 03 00 00  -  movss [rbx+000003CC],xmm1
 "FSD-Win64-Shipping.exe"+7A4C00: 75 76                    -  jne FSD-Win64-Shipping.exe+7A4C78
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>500</ID>
+              <Description>"AOB-NoCryoCannonHeat"</Description>
+              <LastState Activated="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
+  Version: 
+  Date   : 2020-04-01
+  Author : Crissa
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(freezeheat,FSD-Win64-Shipping.exe,F3 0F 11 89 04 08 00 00) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7BBA60)
+
+label(code)
+label(return)
+
+label(noheatbuild)
+newmem:
+
+code:
+addss xmm1,[noheatbuild]
+  movss [rcx+00000804],xmm1
+  jmp return
+
+noheatbuild:
+dd (float)1.0
+
+freezeheat:
+  jmp newmem
+  nop 3
+return:
+registersymbol(freezeheat)
+
+[DISABLE]
+
+freezeheat:
+  db F3 0F 11 89 04 08 00 00
+
+unregistersymbol(freezeheat)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7BBA60
+
+"FSD-Win64-Shipping.exe"+7BBA3E: 0F 28 D1                 -  movaps xmm2,xmm1
+"FSD-Win64-Shipping.exe"+7BBA41: 0F 57 C0                 -  xorps xmm0,xmm0
+"FSD-Win64-Shipping.exe"+7BBA44: 48 8B D9                 -  mov rbx,rcx
+"FSD-Win64-Shipping.exe"+7BBA47: 0F 2F D0                 -  comiss xmm2,xmm0
+"FSD-Win64-Shipping.exe"+7BBA4A: 73 05                    -  jae FSD-Win64-Shipping.exe+7BBA51
+"FSD-Win64-Shipping.exe"+7BBA4C: 0F 57 C9                 -  xorps xmm1,xmm1
+"FSD-Win64-Shipping.exe"+7BBA4F: EB 0C                    -  jmp FSD-Win64-Shipping.exe+7BBA5D
+"FSD-Win64-Shipping.exe"+7BBA51: F3 0F 10 89 F8 07 00 00  -  movss xmm1,[rcx+000007F8]
+"FSD-Win64-Shipping.exe"+7BBA59: F3 0F 5D CA              -  minss xmm1,xmm2
+"FSD-Win64-Shipping.exe"+7BBA5D: 0F 2E CB                 -  ucomiss xmm1,xmm3
+// ---------- INJECTING HERE ----------
+"FSD-Win64-Shipping.exe"+7BBA60: F3 0F 11 89 04 08 00 00  -  movss [rcx+00000804],xmm1
+// ---------- DONE INJECTING  ----------
+"FSD-Win64-Shipping.exe"+7BBA68: 74 55                    -  je FSD-Win64-Shipping.exe+7BBABF
+"FSD-Win64-Shipping.exe"+7BBA6A: 0F 2E C8                 -  ucomiss xmm1,xmm0
+"FSD-Win64-Shipping.exe"+7BBA6D: 75 1F                    -  jne FSD-Win64-Shipping.exe+7BBA8E
+"FSD-Win64-Shipping.exe"+7BBA6F: 80 B9 E0 07 00 00 01     -  cmp byte ptr [rcx+000007E0],01
+"FSD-Win64-Shipping.exe"+7BBA76: 74 16                    -  je FSD-Win64-Shipping.exe+7BBA8E
+"FSD-Win64-Shipping.exe"+7BBA78: B2 01                    -  mov dl,01
+"FSD-Win64-Shipping.exe"+7BBA7A: C6 81 E0 07 00 00 01     -  mov byte ptr [rcx+000007E0],01
+"FSD-Win64-Shipping.exe"+7BBA81: E8 CA 36 14 00           -  call FSD-Win64-Shipping.exe+8FF150
+"FSD-Win64-Shipping.exe"+7BBA86: F3 0F 10 8B 04 08 00 00  -  movss xmm1,[rbx+00000804]
+"FSD-Win64-Shipping.exe"+7BBA8E: 44 0F B6 83 E0 07 00 00  -  movzx r8d,byte ptr [rbx+000007E0]
 }
 </AssemblerScript>
             </CheatEntry>
@@ -1783,7 +1858,7 @@ label(return)
 newmem:
 
 code: //original : sub [rbx+00000390],eax
-  add [rbx+00000390],(int)19753
+  add [rbx+00000390],(int)1975300000
   jmp return
 
 leaflover:
@@ -2033,7 +2108,7 @@ dealloc(newmem)
         <CheatEntry>
           <ID>480</ID>
           <Description>"{This is only here to find the 2 addresses}"</Description>
-          <LastState Value="0.4206913412" RealAddress="248E7129278"/>
+          <LastState Value="583076.1875" RealAddress="248E7129278"/>
           <VariableType>Float</VariableType>
           <Address>gravbase</Address>
           <Offsets>
