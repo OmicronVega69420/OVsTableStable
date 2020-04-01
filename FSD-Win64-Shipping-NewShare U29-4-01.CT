@@ -459,7 +459,7 @@ dealloc(newmem)
             </CheatEntry>
             <CheatEntry>
               <ID>485</ID>
-              <Description>"AOB-AlwaysSpawnCargo/Bag/MatrixEvent"</Description>
+              <Description>"AOB-AlwaysSpawnCargo/Bag/MatrixEvent (Enable Before Mission Start)"</Description>
               <LastState/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
@@ -1223,7 +1223,7 @@ dealloc(newmem)
             </CheatEntry>
             <CheatEntry>
               <ID>492</ID>
-              <Description>"AOB-UnlimitedRangeZips {Requires Distance Upgrade Slot 2}"</Description>
+              <Description>"AOB-UnlimitedRangeZips {Requires Distance Upgrade Slot 2} (Enable Before Mission Start)"</Description>
               <LastState/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
@@ -1298,7 +1298,7 @@ dealloc(newmem)
             </CheatEntry>
             <CheatEntry>
               <ID>493</ID>
-              <Description>"AOB-UnlimitedAngleZips {Requires Angle Upgrade Slot 1}"</Description>
+              <Description>"AOB-UnlimitedAngleZips {Requires Angle Upgrade Slot 1} (Enable Before Mission Start)"</Description>
               <LastState/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
@@ -1463,7 +1463,7 @@ dealloc(newmem)
             </CheatEntry>
             <CheatEntry>
               <ID>487</ID>
-              <Description>"AOB-InstantGrapples(Enable Before Mission Start)"</Description>
+              <Description>"AOB-InstantGrapples {Probably needs Grapple Speed Upgrade} (Enable Before Mission Start)"</Description>
               <LastState/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
@@ -1539,7 +1539,7 @@ dealloc(newmem)
             </CheatEntry>
             <CheatEntry>
               <ID>488</ID>
-              <Description>"AOB-UnlimitedGrappleRange(Enable Before Mission Start)"</Description>
+              <Description>"AOB-UnlimitedGrappleRange {Probably Needs Grapple Range Upgrade} (Enable Before Mission Start)"</Description>
               <LastState/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
@@ -2033,6 +2033,7 @@ dealloc(newmem)
         <CheatEntry>
           <ID>480</ID>
           <Description>"{This is only here to find the 2 addresses}"</Description>
+          <LastState Value="0.4206913412" RealAddress="248E7129278"/>
           <VariableType>Float</VariableType>
           <Address>gravbase</Address>
           <Offsets>
@@ -2212,7 +2213,7 @@ dealloc(newmem)
     </SymbolEntry>
     <SymbolEntry>
       <Name>gravbase</Name>
-      <Address>7FF610F10010</Address>
+      <Address>7FF783BA0000</Address>
     </SymbolEntry>
   </UserdefinedSymbols>
   <Structures StructVersion="2">
