@@ -387,73 +387,224 @@ dealloc(newmem)
 </AssemblerScript>
             </CheatEntry>
             <CheatEntry>
-              <ID>416</ID>
-              <Description>"AOB-InvincibleShields"</Description>
+              <ID>504</ID>
+              <Description>"AOB-GodMode [HOST ONLY] (Code from Omicron)"</Description>
               <LastState/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
-  Version: 
-  Date   : 2020-03-30
-  Author : Crissa
+  Version:
+  Date   : 2020-02-10
+  Author : Verbergler
 
   This script does blah blah blah
 }
 
 [ENABLE]
 
-aobscanmodule(shieldinvuln,FSD-Win64-Shipping.exe,F3 0F 11 81 A8 02 00 00 74) // should be unique
-alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+5EFB66)
+aobscanmodule(GodMode,FSD-Win64-Shipping.exe,48 81 EC 90 00 00 00 0F 29 70 D8 4C) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+5FCF04)
+
+label(code)
+label(return)
+label(noDamage)
+// Function Name
+// 7FF78B23C140 - FSD-Win64-Shipping.UPlayerHealthComponent::TakeDamage()
+newmem:
+  movss xmm1,[noDamage]
+  movss xmm6,[noDamage]
+
+code:
+  sub rsp,00000090
+  jmp return
+
+noDamage:
+  dd (float)0.0
+
+GodMode:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(GodMode)
+
+[DISABLE]
+
+GodMode:
+  db 48 81 EC 90 00 00 00
+
+unregistersymbol(GodMode)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+5FCF04
+
+"FSD-Win64-Shipping.exe"+5FCEED: C3                          -  ret
+"FSD-Win64-Shipping.exe"+5FCEEE: CC                          -  int 3
+"FSD-Win64-Shipping.exe"+5FCEEF: CC                          -  int 3
+"FSD-Win64-Shipping.exe"+5FCEF0: 48 8B C4                    -  mov rax,rsp
+"FSD-Win64-Shipping.exe"+5FCEF3: 48 89 58 08                 -  mov [rax+08],rbx
+"FSD-Win64-Shipping.exe"+5FCEF7: 48 89 68 10                 -  mov [rax+10],rbp
+"FSD-Win64-Shipping.exe"+5FCEFB: 48 89 70 18                 -  mov [rax+18],rsi
+"FSD-Win64-Shipping.exe"+5FCEFF: 57                          -  push rdi
+"FSD-Win64-Shipping.exe"+5FCF00: 41 56                       -  push r14
+"FSD-Win64-Shipping.exe"+5FCF02: 41 57                       -  push r15
+// ---------- INJECTING HERE ----------
+"FSD-Win64-Shipping.exe"+5FCF04: 48 81 EC 90 00 00 00        -  sub rsp,00000090
+// ---------- DONE INJECTING  ----------
+"FSD-Win64-Shipping.exe"+5FCF0B: 0F 29 70 D8                 -  movaps [rax-28],xmm6
+"FSD-Win64-Shipping.exe"+5FCF0F: 4C 8B F9                    -  mov r15,rcx
+"FSD-Win64-Shipping.exe"+5FCF12: 0F 29 78 C8                 -  movaps [rax-38],xmm7
+"FSD-Win64-Shipping.exe"+5FCF16: 49 8B F1                    -  mov rsi,r9
+"FSD-Win64-Shipping.exe"+5FCF19: 44 0F 29 40 B8              -  movaps [rax-48],xmm8
+"FSD-Win64-Shipping.exe"+5FCF1E: 49 8B E8                    -  mov rbp,r8
+"FSD-Win64-Shipping.exe"+5FCF21: 44 0F 29 48 A8              -  movaps [rax-58],xmm9
+"FSD-Win64-Shipping.exe"+5FCF26: 0F 28 F1                    -  movaps xmm6,xmm1
+"FSD-Win64-Shipping.exe"+5FCF29: 48 8B 81 F8 00 00 00        -  mov rax,[rcx+000000F8]
+"FSD-Win64-Shipping.exe"+5FCF30: 48 81 C1 F8 00 00 00        -  add rcx,000000F8
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>505</ID>
+              <Description>"AOB-InstantBuildAndRefill [HOST ONLY] (Code from Omicron)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
+  Version:
+  Date   : 2019-11-27
+  Author : Verbergler
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(ResupplyProgress,FSD-Win64-Shipping.exe,F3 0F 11 83 DC 01 00 00 48 8D 54 24 50) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+5F91C0)
 
 label(code)
 label(return)
 
 newmem:
 
-code: //original : movss [rcx+000002A8],xmm0
-xorps xmm0,xmm0
-  movss [rcx+000002A8],xmm0
+code:
+  mov [rbx+000001DC],(float)1.0
   jmp return
 
-shieldinvuln:
+ResupplyProgress:
   jmp newmem
-  nop 3
+  nop
+  nop
+  nop
 return:
-registersymbol(shieldinvuln)
+registersymbol(ResupplyProgress)
 
 [DISABLE]
 
-shieldinvuln:
-  db F3 0F 11 81 A8 02 00 00
+ResupplyProgress:
+  db F3 0F 11 83 DC 01 00 00
 
-unregistersymbol(shieldinvuln)
+unregistersymbol(ResupplyProgress)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+5EFB66
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+5F91C0
 
-"FSD-Win64-Shipping.exe"+5EFB3F: CC                       -  int 3 
-"FSD-Win64-Shipping.exe"+5EFB40: F3 0F 10 91 A8 02 00 00  -  movss xmm2,[rcx+000002A8]
-"FSD-Win64-Shipping.exe"+5EFB48: 0F 57 C0                 -  xorps xmm0,xmm0
-"FSD-Win64-Shipping.exe"+5EFB4B: 0F 28 DA                 -  movaps xmm3,xmm2
-"FSD-Win64-Shipping.exe"+5EFB4E: F3 0F 58 D9              -  addss xmm3,xmm1
-"FSD-Win64-Shipping.exe"+5EFB52: 0F 2F D8                 -  comiss xmm3,xmm0
-"FSD-Win64-Shipping.exe"+5EFB55: 72 0C                    -  jb FSD-Win64-Shipping.exe+5EFB63
-"FSD-Win64-Shipping.exe"+5EFB57: F3 0F 10 81 A4 02 00 00  -  movss xmm0,[rcx+000002A4]
-"FSD-Win64-Shipping.exe"+5EFB5F: F3 0F 5D C3              -  minss xmm0,xmm3
-"FSD-Win64-Shipping.exe"+5EFB63: 0F 2E C2                 -  ucomiss xmm0,xmm2
+"FSD-Win64-Shipping.exe"+5F919A: F3 0F 58 CE                    -  addss xmm1,xmm6
+"FSD-Win64-Shipping.exe"+5F919E: F3 0F 59 CF                    -  mulss xmm1,xmm7
+"FSD-Win64-Shipping.exe"+5F91A2: F3 0F 5E C8                    -  divss xmm1,xmm0
+"FSD-Win64-Shipping.exe"+5F91A6: 0F 57 C0                       -  xorps xmm0,xmm0
+"FSD-Win64-Shipping.exe"+5F91A9: F3 0F 58 CA                    -  addss xmm1,xmm2
+"FSD-Win64-Shipping.exe"+5F91AD: 0F 2F C8                       -  comiss xmm1,xmm0
+"FSD-Win64-Shipping.exe"+5F91B0: 72 07                          -  jb FSD-Win64-Shipping.exe+5F91B9
+"FSD-Win64-Shipping.exe"+5F91B2: 0F 28 C1                       -  movaps xmm0,xmm1
+"FSD-Win64-Shipping.exe"+5F91B5: F3 0F 5D C6                    -  minss xmm0,xmm6
+"FSD-Win64-Shipping.exe"+5F91B9: 48 8D 8B 68 01 00 00           -  lea rcx,[rbx+00000168]
 // ---------- INJECTING HERE ----------
-"FSD-Win64-Shipping.exe"+5EFB66: F3 0F 11 81 A8 02 00 00  -  movss [rcx+000002A8],xmm0
+"FSD-Win64-Shipping.exe"+5F91C0: F3 0F 11 83 DC 01 00 00        -  movss [rbx+000001DC],xmm0
 // ---------- DONE INJECTING  ----------
-"FSD-Win64-Shipping.exe"+5EFB6E: 74 08                    -  je FSD-Win64-Shipping.exe+5EFB78
-"FSD-Win64-Shipping.exe"+5EFB70: 0F 28 CA                 -  movaps xmm1,xmm2
-"FSD-Win64-Shipping.exe"+5EFB73: E9 88 07 01 00           -  jmp FSD-Win64-Shipping.exe+600300
-"FSD-Win64-Shipping.exe"+5EFB78: C3                       -  ret 
-"FSD-Win64-Shipping.exe"+5EFB79: CC                       -  int 3 
-"FSD-Win64-Shipping.exe"+5EFB7A: CC                       -  int 3 
-"FSD-Win64-Shipping.exe"+5EFB7B: CC                       -  int 3 
-"FSD-Win64-Shipping.exe"+5EFB7C: CC                       -  int 3 
-"FSD-Win64-Shipping.exe"+5EFB7D: CC                       -  int 3 
-"FSD-Win64-Shipping.exe"+5EFB7E: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5F91C8: 48 8D 54 24 50                 -  lea rdx,[rsp+50]
+"FSD-Win64-Shipping.exe"+5F91CD: F3 0F 11 83 E0 01 00 00        -  movss [rbx+000001E0],xmm0
+"FSD-Win64-Shipping.exe"+5F91D5: F3 0F 11 44 24 50              -  movss [rsp+50],xmm0
+"FSD-Win64-Shipping.exe"+5F91DB: E8 90 12 CE FF                 -  call FSD-Win64-Shipping.exe+2DA470
+"FSD-Win64-Shipping.exe"+5F91E0: 0F 2F B3 DC 01 00 00           -  comiss xmm6,[rbx+000001DC]
+"FSD-Win64-Shipping.exe"+5F91E7: 77 5D                          -  ja FSD-Win64-Shipping.exe+5F9246
+"FSD-Win64-Shipping.exe"+5F91E9: 48 8B 8F 10 0C 00 00           -  mov rcx,[rdi+00000C10]
+"FSD-Win64-Shipping.exe"+5F91F0: E8 DB E3 F9 FF                 -  call FSD-Win64-Shipping.exe+5975D0
+"FSD-Win64-Shipping.exe"+5F91F5: EB 20                          -  jmp FSD-Win64-Shipping.exe+5F9217
+"FSD-Win64-Shipping.exe"+5F91F7: 48 8B 8F 10 0C 00 00           -  mov rcx,[rdi+00000C10]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>506</ID>
+              <Description>"AOB-InstantPowerAttack (Code by Omicron)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
+  Version:
+  Date   : 2020-03-29
+  Author : Verbergler
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(InstantPowerAttack,FSD-Win64-Shipping.exe,F3 0F 11 97 AC 04 00 00) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7C1095)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rdi+000004AC],(float)0.0
+  jmp return
+
+InstantPowerAttack:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(InstantPowerAttack)
+
+[DISABLE]
+
+InstantPowerAttack:
+  db F3 0F 11 97 AC 04 00 00
+
+unregistersymbol(InstantPowerAttack)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7C1095
+
+"FSD-Win64-Shipping.exe"+7C1064: E8 A7 96 E9 FF           -  call FSD-Win64-Shipping.exe+65A710
+"FSD-Win64-Shipping.exe"+7C1069: 48 8D 97 B4 04 00 00     -  lea rdx,[rdi+000004B4]
+"FSD-Win64-Shipping.exe"+7C1070: 48 8B CB                 -  mov rcx,rbx
+"FSD-Win64-Shipping.exe"+7C1073: 4C 8B 80 F8 00 00 00     -  mov r8,[rax+000000F8]
+"FSD-Win64-Shipping.exe"+7C107A: E8 21 A3 FA FF           -  call FSD-Win64-Shipping.exe+76B3A0
+"FSD-Win64-Shipping.exe"+7C107F: F3 0F 10 8F AC 04 00 00  -  movss xmm1,[rdi+000004AC]
+"FSD-Win64-Shipping.exe"+7C1087: 0F 2F CE                 -  comiss xmm1,xmm6
+"FSD-Win64-Shipping.exe"+7C108A: F3 0F 59 C7              -  mulss xmm0,xmm7
+"FSD-Win64-Shipping.exe"+7C108E: 0F 28 D1                 -  movaps xmm2,xmm1
+"FSD-Win64-Shipping.exe"+7C1091: F3 0F 5C D0              -  subss xmm2,xmm0
+// ---------- INJECTING HERE ----------
+"FSD-Win64-Shipping.exe"+7C1095: F3 0F 11 97 AC 04 00 00  -  movss [rdi+000004AC],xmm2
+// ---------- DONE INJECTING  ----------
+"FSD-Win64-Shipping.exe"+7C109D: 76 11                    -  jna FSD-Win64-Shipping.exe+7C10B0
+"FSD-Win64-Shipping.exe"+7C109F: 0F 2F D6                 -  comiss xmm2,xmm6
+"FSD-Win64-Shipping.exe"+7C10A2: 77 0C                    -  ja FSD-Win64-Shipping.exe+7C10B0
+"FSD-Win64-Shipping.exe"+7C10A4: 48 8B 8F 90 03 00 00     -  mov rcx,[rdi+00000390]
+"FSD-Win64-Shipping.exe"+7C10AB: E8 F0 A5 DF FF           -  call FSD-Win64-Shipping.exe+5BB6A0
+"FSD-Win64-Shipping.exe"+7C10B0: 40 84 F6                 -  test sil,sil
+"FSD-Win64-Shipping.exe"+7C10B3: 74 43                    -  je FSD-Win64-Shipping.exe+7C10F8
+"FSD-Win64-Shipping.exe"+7C10B5: F3 0F 10 87 AC 04 00 00  -  movss xmm0,[rdi+000004AC]
+"FSD-Win64-Shipping.exe"+7C10BD: F3 0F 5E 87 A8 04 00 00  -  divss xmm0,[rdi+000004A8]
+"FSD-Win64-Shipping.exe"+7C10C5: F3 0F 10 15 6B 47 EA 01  -  movss xmm2,[FSD-Win64-Shipping.exe+2665838]
 }
 </AssemblerScript>
             </CheatEntry>
@@ -1447,6 +1598,156 @@ dealloc(newmem)
 }
 </AssemblerScript>
             </CheatEntry>
+            <CheatEntry>
+              <ID>502</ID>
+              <Description>"AOB-GunnerBarrierDuration [HOST ONLY]"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
+  Version: 
+  Date   : 2020-04-01
+  Author : Crissa
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(shieldDur,FSD-Win64-Shipping.exe,F3 0F 11 87 4C 03 00 00) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+6DA401)
+
+label(code)
+label(return)
+
+label(barriertime)
+newmem:
+
+code:
+movss xmm0,[barriertime]
+  movss [rdi+0000034C],xmm0
+  jmp return
+
+barriertime:
+dd (float)420.0
+
+shieldDur:
+  jmp newmem
+  nop 3
+return:
+registersymbol(shieldDur)
+
+[DISABLE]
+
+shieldDur:
+  db F3 0F 11 87 4C 03 00 00
+
+unregistersymbol(shieldDur)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+6DA401
+
+"FSD-Win64-Shipping.exe"+6DA3C5: 0F 2F 8E 4C 01 00 00     -  comiss xmm1,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA3CC: 0F 92 C0                 -  setb al
+"FSD-Win64-Shipping.exe"+6DA3CF: 88 87 48 03 00 00        -  mov [rdi+00000348],al
+"FSD-Win64-Shipping.exe"+6DA3D5: EB 4C                    -  jmp FSD-Win64-Shipping.exe+6DA423
+"FSD-Win64-Shipping.exe"+6DA3D7: F3 0F 10 86 4C 01 00 00  -  movss xmm0,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA3DF: F3 0F 58 87 44 03 00 00  -  addss xmm0,[rdi+00000344]
+"FSD-Win64-Shipping.exe"+6DA3E7: F3 0F 11 87 44 03 00 00  -  movss [rdi+00000344],xmm0
+"FSD-Win64-Shipping.exe"+6DA3EF: EB 32                    -  jmp FSD-Win64-Shipping.exe+6DA423
+"FSD-Win64-Shipping.exe"+6DA3F1: F3 0F 10 86 4C 01 00 00  -  movss xmm0,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA3F9: F3 0F 58 87 4C 03 00 00  -  addss xmm0,[rdi+0000034C]
+// ---------- INJECTING HERE ----------
+"FSD-Win64-Shipping.exe"+6DA401: F3 0F 11 87 4C 03 00 00  -  movss [rdi+0000034C],xmm0
+// ---------- DONE INJECTING  ----------
+"FSD-Win64-Shipping.exe"+6DA409: EB 18                    -  jmp FSD-Win64-Shipping.exe+6DA423
+"FSD-Win64-Shipping.exe"+6DA40B: F3 0F 10 86 4C 01 00 00  -  movss xmm0,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA413: F3 0F 58 87 40 03 00 00  -  addss xmm0,[rdi+00000340]
+"FSD-Win64-Shipping.exe"+6DA41B: F3 0F 11 87 40 03 00 00  -  movss [rdi+00000340],xmm0
+"FSD-Win64-Shipping.exe"+6DA423: 48 85 DB                 -  test rbx,rbx
+"FSD-Win64-Shipping.exe"+6DA426: 74 7C                    -  je FSD-Win64-Shipping.exe+6DA4A4
+"FSD-Win64-Shipping.exe"+6DA428: 0F B6 8E 48 01 00 00     -  movzx ecx,byte ptr [rsi+00000148]
+"FSD-Win64-Shipping.exe"+6DA42F: 83 E9 03                 -  sub ecx,03
+"FSD-Win64-Shipping.exe"+6DA432: 74 54                    -  je FSD-Win64-Shipping.exe+6DA488
+"FSD-Win64-Shipping.exe"+6DA434: 83 F9 01                 -  cmp ecx,01
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>503</ID>
+              <Description>"AOB-GunnerBarrierSize  [HOST ONLY]"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
+  Version: 
+  Date   : 2020-04-01
+  Author : Crissa
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(barriersize,FSD-Win64-Shipping.exe,F3 0F 11 87 40 03 00 00 48) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+6DA41B)
+
+label(code)
+label(return)
+
+label(bubblesize)
+newmem:
+
+code:
+mulss xmm0,[bubblesize]
+  movss [rdi+00000340],xmm0
+  jmp return
+
+bubblesize:
+dd (float)1.42
+
+barriersize:
+  jmp newmem
+  nop 3
+return:
+registersymbol(barriersize)
+
+[DISABLE]
+
+barriersize:
+  db F3 0F 11 87 40 03 00 00
+
+unregistersymbol(barriersize)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+6DA41B
+
+"FSD-Win64-Shipping.exe"+6DA3D7: F3 0F 10 86 4C 01 00 00  -  movss xmm0,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA3DF: F3 0F 58 87 44 03 00 00  -  addss xmm0,[rdi+00000344]
+"FSD-Win64-Shipping.exe"+6DA3E7: F3 0F 11 87 44 03 00 00  -  movss [rdi+00000344],xmm0
+"FSD-Win64-Shipping.exe"+6DA3EF: EB 32                    -  jmp FSD-Win64-Shipping.exe+6DA423
+"FSD-Win64-Shipping.exe"+6DA3F1: F3 0F 10 86 4C 01 00 00  -  movss xmm0,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA3F9: F3 0F 58 87 4C 03 00 00  -  addss xmm0,[rdi+0000034C]
+"FSD-Win64-Shipping.exe"+6DA401: F3 0F 11 87 4C 03 00 00  -  movss [rdi+0000034C],xmm0
+"FSD-Win64-Shipping.exe"+6DA409: EB 18                    -  jmp FSD-Win64-Shipping.exe+6DA423
+"FSD-Win64-Shipping.exe"+6DA40B: F3 0F 10 86 4C 01 00 00  -  movss xmm0,[rsi+0000014C]
+"FSD-Win64-Shipping.exe"+6DA413: F3 0F 58 87 40 03 00 00  -  addss xmm0,[rdi+00000340]
+// ---------- INJECTING HERE ----------
+"FSD-Win64-Shipping.exe"+6DA41B: F3 0F 11 87 40 03 00 00  -  movss [rdi+00000340],xmm0
+// ---------- DONE INJECTING  ----------
+"FSD-Win64-Shipping.exe"+6DA423: 48 85 DB                 -  test rbx,rbx
+"FSD-Win64-Shipping.exe"+6DA426: 74 7C                    -  je FSD-Win64-Shipping.exe+6DA4A4
+"FSD-Win64-Shipping.exe"+6DA428: 0F B6 8E 48 01 00 00     -  movzx ecx,byte ptr [rsi+00000148]
+"FSD-Win64-Shipping.exe"+6DA42F: 83 E9 03                 -  sub ecx,03
+"FSD-Win64-Shipping.exe"+6DA432: 74 54                    -  je FSD-Win64-Shipping.exe+6DA488
+"FSD-Win64-Shipping.exe"+6DA434: 83 F9 01                 -  cmp ecx,01
+"FSD-Win64-Shipping.exe"+6DA437: 75 6B                    -  jne FSD-Win64-Shipping.exe+6DA4A4
+"FSD-Win64-Shipping.exe"+6DA439: 48 8B 8B E8 04 00 00     -  mov rcx,[rbx+000004E8]
+"FSD-Win64-Shipping.exe"+6DA440: 48 8B 01                 -  mov rax,[rcx]
+"FSD-Win64-Shipping.exe"+6DA443: FF 90 D0 03 00 00        -  call qword ptr [rax+000003D0]
+}
+</AssemblerScript>
+            </CheatEntry>
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
@@ -1992,6 +2293,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>196</ID>
               <Description>"(Page Up to +400 count / Page Down to +80 count)"</Description>
+              <LastState Value="0" RealAddress="162B82388E0"/>
               <VariableType>Float</VariableType>
               <Address>nitrabase</Address>
               <Offsets>
@@ -2121,6 +2423,77 @@ dealloc(newmem)
       <Description>"===|===|===|===|===|===|===|===|===|===|"</Description>
       <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>416</ID>
+      <Description>"AOB-InvincibleShields"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
+  Version: 
+  Date   : 2020-03-30
+  Author : Crissa
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(shieldinvuln,FSD-Win64-Shipping.exe,F3 0F 11 81 A8 02 00 00 74) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+5EFB66)
+
+label(code)
+label(return)
+
+newmem:
+
+code: //original : movss [rcx+000002A8],xmm0
+xorps xmm0,xmm0
+  movss [rcx+000002A8],xmm0
+  jmp return
+
+shieldinvuln:
+  jmp newmem
+  nop 3
+return:
+registersymbol(shieldinvuln)
+
+[DISABLE]
+
+shieldinvuln:
+  db F3 0F 11 81 A8 02 00 00
+
+unregistersymbol(shieldinvuln)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+5EFB66
+
+"FSD-Win64-Shipping.exe"+5EFB3F: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5EFB40: F3 0F 10 91 A8 02 00 00  -  movss xmm2,[rcx+000002A8]
+"FSD-Win64-Shipping.exe"+5EFB48: 0F 57 C0                 -  xorps xmm0,xmm0
+"FSD-Win64-Shipping.exe"+5EFB4B: 0F 28 DA                 -  movaps xmm3,xmm2
+"FSD-Win64-Shipping.exe"+5EFB4E: F3 0F 58 D9              -  addss xmm3,xmm1
+"FSD-Win64-Shipping.exe"+5EFB52: 0F 2F D8                 -  comiss xmm3,xmm0
+"FSD-Win64-Shipping.exe"+5EFB55: 72 0C                    -  jb FSD-Win64-Shipping.exe+5EFB63
+"FSD-Win64-Shipping.exe"+5EFB57: F3 0F 10 81 A4 02 00 00  -  movss xmm0,[rcx+000002A4]
+"FSD-Win64-Shipping.exe"+5EFB5F: F3 0F 5D C3              -  minss xmm0,xmm3
+"FSD-Win64-Shipping.exe"+5EFB63: 0F 2E C2                 -  ucomiss xmm0,xmm2
+// ---------- INJECTING HERE ----------
+"FSD-Win64-Shipping.exe"+5EFB66: F3 0F 11 81 A8 02 00 00  -  movss [rcx+000002A8],xmm0
+// ---------- DONE INJECTING  ----------
+"FSD-Win64-Shipping.exe"+5EFB6E: 74 08                    -  je FSD-Win64-Shipping.exe+5EFB78
+"FSD-Win64-Shipping.exe"+5EFB70: 0F 28 CA                 -  movaps xmm1,xmm2
+"FSD-Win64-Shipping.exe"+5EFB73: E9 88 07 01 00           -  jmp FSD-Win64-Shipping.exe+600300
+"FSD-Win64-Shipping.exe"+5EFB78: C3                       -  ret 
+"FSD-Win64-Shipping.exe"+5EFB79: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5EFB7A: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5EFB7B: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5EFB7C: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5EFB7D: CC                       -  int 3 
+"FSD-Win64-Shipping.exe"+5EFB7E: CC                       -  int 3 
+}
+</AssemblerScript>
     </CheatEntry>
   </CheatEntries>
   <CheatCodes>
@@ -2263,7 +2636,7 @@ dealloc(newmem)
   <UserdefinedSymbols>
     <SymbolEntry>
       <Name>nitrabase</Name>
-      <Address>7FF610F10000</Address>
+      <Address>7FF682320000</Address>
     </SymbolEntry>
     <SymbolEntry>
       <Name>invuln</Name>
