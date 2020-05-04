@@ -4742,7 +4742,7 @@ dealloc(newmem)
                 </CheatEntry>
                 <CheatEntry>
                   <ID>24211</ID>
-                  <Description>"Never Spawn Swarms (Turning Off At The End Of Mission Will Spawn All Spawns At Once)"</Description>
+                  <Description>"Never Spawn Swarms (Turning Off At The End Of Mission Will Spawn All Swarms At Once)"</Description>
                   <LastState/>
                   <VariableType>Auto Assembler Script</VariableType>
                   <AssemblerScript>{ Game   : FSD-Win64-Shipping.exe
