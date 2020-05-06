@@ -3328,7 +3328,7 @@ dealloc(newmem)
                 <CheatEntry>
                   <ID>1798</ID>
                   <Description>"Unlimited Ammo"</Description>
-                  <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+                  <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
                   <LastState Value="" RealAddress="00000000"/>
                   <GroupHeader>1</GroupHeader>
                   <CheatEntries>
@@ -3688,7 +3688,7 @@ dealloc(newmem)
                 <CheatEntry>
                   <ID>24210</ID>
                   <Description>"Pickaxe Upgrades"</Description>
-                  <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+                  <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
                   <LastState Value="" RealAddress="00000000"/>
                   <GroupHeader>1</GroupHeader>
                   <CheatEntries>
