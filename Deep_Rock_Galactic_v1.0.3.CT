@@ -1951,8 +1951,8 @@ dealloc(newmem)
 
 [ENABLE]
 
-aobscanmodule(UnlimitedMinigunAmmo,FSD-Win64-Shipping.exe,89 86 B0 06 00 00 89) // should be unique
-alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7C6FFE)
+aobscanmodule(UnlimitedMinigunAmmo,FSD-Win64-Shipping.exe,89 86 B0 06 00 00 89 44 24 70 E8 23) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7CC0AE)
 
 label(code)
 label(return)
@@ -1978,31 +1978,31 @@ unregistersymbol(UnlimitedMinigunAmmo)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7C6FFE
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7CC0AE
 
-"FSD-Win64-Shipping.exe"+7C6FCE: 48 8B 15 F3 76 D9 02     -  mov rdx,[FSD-Win64-Shipping.exe+355E6C8]
-"FSD-Win64-Shipping.exe"+7C6FD5: 41 B0 01                 -  mov r8l,01
-"FSD-Win64-Shipping.exe"+7C6FD8: 48 8B C8                 -  mov rcx,rax
-"FSD-Win64-Shipping.exe"+7C6FDB: E8 C0 BC 0F 01           -  call FSD-Win64-Shipping.exe+18C2CA0
-"FSD-Win64-Shipping.exe"+7C6FE0: 8B 86 B0 06 00 00        -  mov eax,[rsi+000006B0]
-"FSD-Win64-Shipping.exe"+7C6FE6: 48 8D 8E 88 04 00 00     -  lea rcx,[rsi+00000488]
-"FSD-Win64-Shipping.exe"+7C6FED: 2B 86 98 06 00 00        -  sub eax,[rsi+00000698]
-"FSD-Win64-Shipping.exe"+7C6FF3: 48 8D 54 24 70           -  lea rdx,[rsp+70]
-"FSD-Win64-Shipping.exe"+7C6FF8: 85 C0                    -  test eax,eax
-"FSD-Win64-Shipping.exe"+7C6FFA: 41 0F 4E C6              -  cmovle eax,r14d
+"FSD-Win64-Shipping.exe"+7CC07E: 48 8B 15 A3 24 DA 02     -  mov rdx,[FSD-Win64-Shipping.exe+356E528]
+"FSD-Win64-Shipping.exe"+7CC085: 41 B0 01                 -  mov r8l,01
+"FSD-Win64-Shipping.exe"+7CC088: 48 8B C8                 -  mov rcx,rax
+"FSD-Win64-Shipping.exe"+7CC08B: E8 B0 F7 0F 01           -  call FSD-Win64-Shipping.exe+18CB840
+"FSD-Win64-Shipping.exe"+7CC090: 8B 86 B0 06 00 00        -  mov eax,[rsi+000006B0]
+"FSD-Win64-Shipping.exe"+7CC096: 48 8D 8E 88 04 00 00     -  lea rcx,[rsi+00000488]
+"FSD-Win64-Shipping.exe"+7CC09D: 2B 86 98 06 00 00        -  sub eax,[rsi+00000698]
+"FSD-Win64-Shipping.exe"+7CC0A3: 48 8D 54 24 70           -  lea rdx,[rsp+70]
+"FSD-Win64-Shipping.exe"+7CC0A8: 85 C0                    -  test eax,eax
+"FSD-Win64-Shipping.exe"+7CC0AA: 41 0F 4E C6              -  cmovle eax,r14d
 // ---------- INJECTING HERE ----------
-"FSD-Win64-Shipping.exe"+7C6FFE: 89 86 B0 06 00 00        -  mov [rsi+000006B0],eax
+"FSD-Win64-Shipping.exe"+7CC0AE: 89 86 B0 06 00 00        -  mov [rsi+000006B0],eax
 // ---------- DONE INJECTING  ----------
-"FSD-Win64-Shipping.exe"+7C7004: 89 44 24 70              -  mov [rsp+70],eax
-"FSD-Win64-Shipping.exe"+7C7008: E8 13 93 B1 FF           -  call FSD-Win64-Shipping.exe+2E0320
-"FSD-Win64-Shipping.exe"+7C700D: 8B 86 B0 06 00 00        -  mov eax,[rsi+000006B0]
-"FSD-Win64-Shipping.exe"+7C7013: 48 8D 54 24 70           -  lea rdx,[rsp+70]
-"FSD-Win64-Shipping.exe"+7C7018: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
-"FSD-Win64-Shipping.exe"+7C701F: 03 86 AC 06 00 00        -  add eax,[rsi+000006AC]
-"FSD-Win64-Shipping.exe"+7C7025: 48 81 C1 30 01 00 00     -  add rcx,00000130
-"FSD-Win64-Shipping.exe"+7C702C: 89 44 24 70              -  mov [rsp+70],eax
-"FSD-Win64-Shipping.exe"+7C7030: E8 EB 92 B1 FF           -  call FSD-Win64-Shipping.exe+2E0320
-"FSD-Win64-Shipping.exe"+7C7035: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
+"FSD-Win64-Shipping.exe"+7CC0B4: 89 44 24 70              -  mov [rsp+70],eax
+"FSD-Win64-Shipping.exe"+7CC0B8: E8 23 4B B1 FF           -  call FSD-Win64-Shipping.exe+2E0BE0
+"FSD-Win64-Shipping.exe"+7CC0BD: 8B 86 B0 06 00 00        -  mov eax,[rsi+000006B0]
+"FSD-Win64-Shipping.exe"+7CC0C3: 48 8D 54 24 70           -  lea rdx,[rsp+70]
+"FSD-Win64-Shipping.exe"+7CC0C8: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
+"FSD-Win64-Shipping.exe"+7CC0CF: 03 86 AC 06 00 00        -  add eax,[rsi+000006AC]
+"FSD-Win64-Shipping.exe"+7CC0D5: 48 81 C1 30 01 00 00     -  add rcx,00000130
+"FSD-Win64-Shipping.exe"+7CC0DC: 89 44 24 70              -  mov [rsp+70],eax
+"FSD-Win64-Shipping.exe"+7CC0E0: E8 FB 4A B1 FF           -  call FSD-Win64-Shipping.exe+2E0BE0
+"FSD-Win64-Shipping.exe"+7CC0E5: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
 }
 </AssemblerScript>
                     </CheatEntry>
@@ -3669,8 +3669,8 @@ dealloc(newmem)
 
 [ENABLE]
 
-aobscanmodule(UnlimitedMagazine,FSD-Win64-Shipping.exe,89 86 B0 06 00 00 89 44 24 70 E8 CE) // should be unique
-alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7C6743)
+aobscanmodule(UnlimitedMagazine,FSD-Win64-Shipping.exe,89 86 B0 06 00 00 89 44 24 70 E8 DE) // should be unique
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7CB7F3)
 
 label(code)
 label(return)
@@ -3696,31 +3696,31 @@ unregistersymbol(UnlimitedMagazine)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7C6743
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7CB7F3
 
-"FSD-Win64-Shipping.exe"+7C6713: 48 8B 15 26 7D D9 02     -  mov rdx,[FSD-Win64-Shipping.exe+355E440]
-"FSD-Win64-Shipping.exe"+7C671A: 41 B0 01                 -  mov r8l,01
-"FSD-Win64-Shipping.exe"+7C671D: 48 8B C8                 -  mov rcx,rax
-"FSD-Win64-Shipping.exe"+7C6720: E8 7B C5 0F 01           -  call FSD-Win64-Shipping.exe+18C2CA0
-"FSD-Win64-Shipping.exe"+7C6725: 8B 86 B0 06 00 00        -  mov eax,[rsi+000006B0]
-"FSD-Win64-Shipping.exe"+7C672B: 48 8D 8E 88 04 00 00     -  lea rcx,[rsi+00000488]
-"FSD-Win64-Shipping.exe"+7C6732: 2B 86 98 06 00 00        -  sub eax,[rsi+00000698]
-"FSD-Win64-Shipping.exe"+7C6738: 48 8D 54 24 70           -  lea rdx,[rsp+70]
-"FSD-Win64-Shipping.exe"+7C673D: 85 C0                    -  test eax,eax
-"FSD-Win64-Shipping.exe"+7C673F: 41 0F 4E C6              -  cmovle eax,r14d
+"FSD-Win64-Shipping.exe"+7CB7C3: 48 8B 15 D6 2A DA 02     -  mov rdx,[FSD-Win64-Shipping.exe+356E2A0]
+"FSD-Win64-Shipping.exe"+7CB7CA: 41 B0 01                 -  mov r8l,01
+"FSD-Win64-Shipping.exe"+7CB7CD: 48 8B C8                 -  mov rcx,rax
+"FSD-Win64-Shipping.exe"+7CB7D0: E8 6B 00 10 01           -  call FSD-Win64-Shipping.exe+18CB840
+"FSD-Win64-Shipping.exe"+7CB7D5: 8B 86 B0 06 00 00        -  mov eax,[rsi+000006B0]
+"FSD-Win64-Shipping.exe"+7CB7DB: 48 8D 8E 88 04 00 00     -  lea rcx,[rsi+00000488]
+"FSD-Win64-Shipping.exe"+7CB7E2: 2B 86 98 06 00 00        -  sub eax,[rsi+00000698]
+"FSD-Win64-Shipping.exe"+7CB7E8: 48 8D 54 24 70           -  lea rdx,[rsp+70]
+"FSD-Win64-Shipping.exe"+7CB7ED: 85 C0                    -  test eax,eax
+"FSD-Win64-Shipping.exe"+7CB7EF: 41 0F 4E C6              -  cmovle eax,r14d
 // ---------- INJECTING HERE ----------
-"FSD-Win64-Shipping.exe"+7C6743: 89 86 B0 06 00 00        -  mov [rsi+000006B0],eax
+"FSD-Win64-Shipping.exe"+7CB7F3: 89 86 B0 06 00 00        -  mov [rsi+000006B0],eax
 // ---------- DONE INJECTING  ----------
-"FSD-Win64-Shipping.exe"+7C6749: 89 44 24 70              -  mov [rsp+70],eax
-"FSD-Win64-Shipping.exe"+7C674D: E8 CE 9B B1 FF           -  call FSD-Win64-Shipping.exe+2E0320
-"FSD-Win64-Shipping.exe"+7C6752: 8B 86 AC 06 00 00        -  mov eax,[rsi+000006AC]
-"FSD-Win64-Shipping.exe"+7C6758: 48 8D 54 24 70           -  lea rdx,[rsp+70]
-"FSD-Win64-Shipping.exe"+7C675D: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
-"FSD-Win64-Shipping.exe"+7C6764: 03 86 B0 06 00 00        -  add eax,[rsi+000006B0]
-"FSD-Win64-Shipping.exe"+7C676A: 48 81 C1 30 01 00 00     -  add rcx,00000130
-"FSD-Win64-Shipping.exe"+7C6771: 89 44 24 70              -  mov [rsp+70],eax
-"FSD-Win64-Shipping.exe"+7C6775: E8 A6 9B B1 FF           -  call FSD-Win64-Shipping.exe+2E0320
-"FSD-Win64-Shipping.exe"+7C677A: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
+"FSD-Win64-Shipping.exe"+7CB7F9: 89 44 24 70              -  mov [rsp+70],eax
+"FSD-Win64-Shipping.exe"+7CB7FD: E8 DE 53 B1 FF           -  call FSD-Win64-Shipping.exe+2E0BE0
+"FSD-Win64-Shipping.exe"+7CB802: 8B 86 AC 06 00 00        -  mov eax,[rsi+000006AC]
+"FSD-Win64-Shipping.exe"+7CB808: 48 8D 54 24 70           -  lea rdx,[rsp+70]
+"FSD-Win64-Shipping.exe"+7CB80D: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
+"FSD-Win64-Shipping.exe"+7CB814: 03 86 B0 06 00 00        -  add eax,[rsi+000006B0]
+"FSD-Win64-Shipping.exe"+7CB81A: 48 81 C1 30 01 00 00     -  add rcx,00000130
+"FSD-Win64-Shipping.exe"+7CB821: 89 44 24 70              -  mov [rsp+70],eax
+"FSD-Win64-Shipping.exe"+7CB825: E8 B6 53 B1 FF           -  call FSD-Win64-Shipping.exe+2E0BE0
+"FSD-Win64-Shipping.exe"+7CB82A: 48 8B 8E C0 04 00 00     -  mov rcx,[rsi+000004C0]
 }
 </AssemblerScript>
                     </CheatEntry>
@@ -3740,7 +3740,7 @@ dealloc(newmem)
 [ENABLE]
 
 aobscanmodule(UnlimitedReserveAmmo,FSD-Win64-Shipping.exe,89 8B AC 06 00 00 48) // should be unique
-alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+79ECB4)
+alloc(newmem,$1000,"FSD-Win64-Shipping.exe"+7A2A94)
 
 label(code)
 label(return)
@@ -3766,31 +3766,31 @@ unregistersymbol(UnlimitedReserveAmmo)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+79ECB4
+// ORIGINAL CODE - INJECTION POINT: "FSD-Win64-Shipping.exe"+7A2A94
 
-"FSD-Win64-Shipping.exe"+79EC8A: 80 BB 2A 07 00 00 03  -  cmp byte ptr [rbx+0000072A],03
-"FSD-Win64-Shipping.exe"+79EC91: 0F 85 AA 00 00 00     -  jne FSD-Win64-Shipping.exe+79ED41
-"FSD-Win64-Shipping.exe"+79EC97: 8B 8B AC 06 00 00     -  mov ecx,[rbx+000006AC]
-"FSD-Win64-Shipping.exe"+79EC9D: 8B 83 B0 06 00 00     -  mov eax,[rbx+000006B0]
-"FSD-Win64-Shipping.exe"+79ECA3: 8B 93 94 06 00 00     -  mov edx,[rbx+00000694]
-"FSD-Win64-Shipping.exe"+79ECA9: 2B D0                 -  sub edx,eax
-"FSD-Win64-Shipping.exe"+79ECAB: 3B CA                 -  cmp ecx,edx
-"FSD-Win64-Shipping.exe"+79ECAD: 0F 4E D1              -  cmovle edx,ecx
-"FSD-Win64-Shipping.exe"+79ECB0: 2B CA                 -  sub ecx,edx
-"FSD-Win64-Shipping.exe"+79ECB2: 03 C2                 -  add eax,edx
+"FSD-Win64-Shipping.exe"+7A2A6A: 80 BB 2A 07 00 00 03  -  cmp byte ptr [rbx+0000072A],03
+"FSD-Win64-Shipping.exe"+7A2A71: 0F 85 AA 00 00 00     -  jne FSD-Win64-Shipping.exe+7A2B21
+"FSD-Win64-Shipping.exe"+7A2A77: 8B 8B AC 06 00 00     -  mov ecx,[rbx+000006AC]
+"FSD-Win64-Shipping.exe"+7A2A7D: 8B 83 B0 06 00 00     -  mov eax,[rbx+000006B0]
+"FSD-Win64-Shipping.exe"+7A2A83: 8B 93 94 06 00 00     -  mov edx,[rbx+00000694]
+"FSD-Win64-Shipping.exe"+7A2A89: 2B D0                 -  sub edx,eax
+"FSD-Win64-Shipping.exe"+7A2A8B: 3B CA                 -  cmp ecx,edx
+"FSD-Win64-Shipping.exe"+7A2A8D: 0F 4E D1              -  cmovle edx,ecx
+"FSD-Win64-Shipping.exe"+7A2A90: 2B CA                 -  sub ecx,edx
+"FSD-Win64-Shipping.exe"+7A2A92: 03 C2                 -  add eax,edx
 // ---------- INJECTING HERE ----------
-"FSD-Win64-Shipping.exe"+79ECB4: 89 8B AC 06 00 00     -  mov [rbx+000006AC],ecx
+"FSD-Win64-Shipping.exe"+7A2A94: 89 8B AC 06 00 00     -  mov [rbx+000006AC],ecx
 // ---------- DONE INJECTING  ----------
-"FSD-Win64-Shipping.exe"+79ECBA: 48 8D 54 24 30        -  lea rdx,[rsp+30]
-"FSD-Win64-Shipping.exe"+79ECBF: 48 8D 8B 88 04 00 00  -  lea rcx,[rbx+00000488]
-"FSD-Win64-Shipping.exe"+79ECC6: 89 83 B0 06 00 00     -  mov [rbx+000006B0],eax
-"FSD-Win64-Shipping.exe"+79ECCC: 89 44 24 30           -  mov [rsp+30],eax
-"FSD-Win64-Shipping.exe"+79ECD0: E8 4B 16 B4 FF        -  call FSD-Win64-Shipping.exe+2E0320
-"FSD-Win64-Shipping.exe"+79ECD5: 48 8B 8B C0 04 00 00  -  mov rcx,[rbx+000004C0]
-"FSD-Win64-Shipping.exe"+79ECDC: 48 8D 54 24 30        -  lea rdx,[rsp+30]
-"FSD-Win64-Shipping.exe"+79ECE1: 8B 83 AC 06 00 00     -  mov eax,[rbx+000006AC]
-"FSD-Win64-Shipping.exe"+79ECE7: 48 81 C1 20 01 00 00  -  add rcx,00000120
-"FSD-Win64-Shipping.exe"+79ECEE: 89 44 24 30           -  mov [rsp+30],eax
+"FSD-Win64-Shipping.exe"+7A2A9A: 48 8D 54 24 30        -  lea rdx,[rsp+30]
+"FSD-Win64-Shipping.exe"+7A2A9F: 48 8D 8B 88 04 00 00  -  lea rcx,[rbx+00000488]
+"FSD-Win64-Shipping.exe"+7A2AA6: 89 83 B0 06 00 00     -  mov [rbx+000006B0],eax
+"FSD-Win64-Shipping.exe"+7A2AAC: 89 44 24 30           -  mov [rsp+30],eax
+"FSD-Win64-Shipping.exe"+7A2AB0: E8 2B E1 B3 FF        -  call FSD-Win64-Shipping.exe+2E0BE0
+"FSD-Win64-Shipping.exe"+7A2AB5: 48 8B 8B C0 04 00 00  -  mov rcx,[rbx+000004C0]
+"FSD-Win64-Shipping.exe"+7A2ABC: 48 8D 54 24 30        -  lea rdx,[rsp+30]
+"FSD-Win64-Shipping.exe"+7A2AC1: 8B 83 AC 06 00 00     -  mov eax,[rbx+000006AC]
+"FSD-Win64-Shipping.exe"+7A2AC7: 48 81 C1 20 01 00 00  -  add rcx,00000120
+"FSD-Win64-Shipping.exe"+7A2ACE: 89 44 24 30           -  mov [rsp+30],eax
 }
 </AssemblerScript>
                     </CheatEntry>
