@@ -1,0 +1,183 @@
+Here lies some values that you may scan for.
+
+If you are looking for the ammo for your primary and secondary they will both be '4 Bytes'
+This is the most simplest of all things to scan for. However, your reserve ammo will not be a 4 byte.
+
+Format for those who really... dont know:
+f = Float
+d = Double
+Specifically for these two.
+
+Player Health:
+100% = 25.0f
+/
+Every 20% = 5.0f
+
+Player Infection:
+Example:
+- 0.10 = 10% Infection
+- 0.15 = 15% Infection
+- 1.00 = 100% Infection
+
+All Enemy healths (including unreleased enemies)
+Released:
+- Striker: 20.0f
+- Shadow Striker: 20.0f
+- Shooter: 30.0f
+- Charger(Bull): 30.0f
+- Striker_Child: 5.0f
+- Scout: 42.0f
+- Titan Striker: 120.0f
+- Shadow Titan Striker: 120.0f
+- Titan Shooter: 150.0f
+- Hybrid(Hybirb): 150.0f
+- InfectionSpitter(Parasite): N/A (The ballsacks do NOT have any health, you can find info about them when scanning for their timers)
+- Birther: 5000.0f
+  Tumor Health: 630.0f (Sometimes it will show as 631.0)
+- Big Birther: 12500.0f
+  Tumor Health: 1565.0f (Also, keep in mind that each Tumor on a Birther has it's very own health)
+For these 3 enemies below, you will not be able to access them without the current mod menu.
+Unreleased:
+- Tank: 500.0f
+- Toxic Titan Shooter: 150.0f
+- Titan Striker Boss(Crawler): 120.0f
+
+If you would really like to get indepth on enemy healths, you can even find their "Limb" healths.
+How the Limb health works compared to the overall health of an enemy is by:
+
+Say, Striker has 300.0 health. That is it's overall health which when it reaches 0.00 it dies and the body despawns at some point in time.
+Now, the Limb health is totally separate from the overall health. By default with no edits, all Striker limbs are at: 10.0f health.
+
+Since I haven't listed any multipliers, yet. I'll just say this now, multipliers do not work on the limb health but they do work on the enemy's overall health.
+So now we have:
+Striker health: 300.0
+Left Arm health: 10.0
+
+Now, you shoot the left arm from the backside of the enemy. (Say, your damage is 2.0 and backside multipliers are 5x your base damage)
+(EXAMPLE)
+Striker health: 290.0 (2.0 x 5 = 10.0 Damage)
+Left Arm health: 8.0 (2.0 Damage dealt, because multipliers are ignored on limb healths)
+
+If you are scanning for limb healths of an enemy and you think you messed up and decide to start on another limb, you don't have to.
+
+Limb healths can go below 0 and into the negatives as long as the enemy's overall health does not reach 0.00
+=======================================================================================================================================================================================
+
+Now I will list enemy damage amounts per hit and for what attack.
+You can try scanning for these but I myself haven't had any luck. :(
+
+Here is the format: { ranged | melee }
+- Normal Striker: 3.0 | N/A
+- Normal Shooter: 1.2 | N/A
+- Shadow Striker: 3.0 | N/A
+- Baby Striker: 1.0 | N/A
+
+- Charger: 4.5 | 1.0
+- Scout: 1.0 | N/A
+
+- Titan Striker: 6.0 | 10.0
+- Titan Shooter: 1.5 | N/A
+- Shadow Titan Striker: 6.0 | 10.0
+
+- Hybrid: 0.9 | 3.0
+- Small Birther: N/A | N/A
+- Big Birther: N/A | N/A
+
+- InfectionSpitters: (I actually forgot to check for this one)
+
+=======================================================================================================================================================================================
+
+Sweet, now here is how you can find your melee damage.
+
+When you swing your melee just by simply left-clicking once, you have just dealt 4.0f damage whether you hit something or not.
+So,
+QuickTap = 4.0f
+Full Charge = 20.0f
+
+To find this, it is really easy.
+Start off by selecting your melee weapon and swing it one time with a QuickTap.
+
+So you should be scanning for a 4.0 as a Float (For the First Scan)
+You'll have to now do a Full Charge (When the whole circle is lit up) and swing it.
+This is going to be your second scan, you will be scanning for a 20.0 as a Float
+
+Simply repeat back and forth from a 4.0 to a 20.0 and youll end up with your address.
+Once you have it, just freeze and set the number to 99999 for example and QuickTap an enemy to try it out.
+
+=======================================================================================================================================================================================
+
+Hm, here is some info on InfectionSpitters.
+
+InfectionSpitters do NOT have a health. They rely completely on timers.
+
+When they haven't exploded their 1st main timer will be on 0.00f
+
+When flashing your light on them it takes 0.60 seconds for them to retract and while they have been flashed, they will retract for 12.83 seconds.
+If you were to shoot them, they would retract for 32.00 seconds. However, they have a second timer that relates in a way to regen or rather as an ability cooldown
+which is their explosion. When they are forced to explode by a bullet, their 1st timer will increase to 32.00 seconds and on 28.00 seconds their explosion ability will
+available again, which means you can shoot them after that 4th second goes by.
+
+If you have a C-Foam Launcher and use 1 ammo use on an InfectionSpitter it will retract for 75.00 seconds. Except, during this time if you decide to shoot it it will explode
+and the timer will be instantly reset to 32.00 seconds even if you shot it when it could've been on 60.00 seconds.
+
+If you are trying to find their timers, it is quite simple.
+Your first scan should be an Unknown Initial Value as a float. (You'll need an InfectionSpitter next to you for this)
+To make things a little easier, setup your next scan for a value between "12 and 13" (FLOAT)
+Turn on your flashlight and keep it on the InfectionSpitter to make it retract and start your second scan.
+
+You may or may not get your result in just these 2 scans, for the 3rd scan change the scan to "Decreased Value" (do NOT scan yet)
+Turn off your flashlight so that the InfectionSpitter's timer may decrease. Now you can start the 3rd scan.
+
+The 4th scan should be pretty easy. Just wait for the InfectionSpitter to start glowing. That's how you will know when it's timer has finally reached 0 which will also be
+your next scan value (Exact Value scan).
+
+Then, your 5th scan will basically be exactly like your 2nd scan and setup.
+
+=======================================================================================================================================================================================
+
+For whatever reason, i'll just drop this here as well.
+
+C-Foam Launcher:
+Cooldown after firing a full charge: 2.5 seconds
+Charge up time to make a full charge (Circle crosshair is completely white): 2.0 seconds
+
+Bio Tracker:
+Charge up time: 1.0 second
+Cooldown per tag: 8.5 seconds
+
+Mines:
+Placement time: 0.5 seconds
+Wait time inbetween each mine placement: 2.0 seconds
+Pickup speed: 0.5 seconds
+
+=======================================================================================================================================================================================
+Mob Cap:
+(FLOAT)
+Max: 32.0f
+Min: 25.0f
+
+Each mob's unit amount:
+- Normal Striker: 1.0f
+- Normal Shooter: 1.0f
+- Shadow Striker: 0.75f
+- Baby Striker: 1.0f
+- Titan Striker: 2.0f
+- Shadow Titan Striker: 2.0f
+- Titan Shooter: 2.0f
+- Titan Hybrid: 2.0f
+- Charger: 1.0f
+- Birther: 2.0f
+- Big Birther: 2.0f
+
+=======================================================================================================================================================================================
+
+Equipment Ammo:
+
+Starting amount: 100.0f
+Max amount: 150.0f
+
+And for consumables... tbh, I forgot. Consumables should be floats? maybe.
+I think "PocketItems" like glowsticks are floats as well.
+
+Ah right, if youare going to look for a glowstick's timer for how long it will last, keep in ming the address changes everytime you throw a new glowstick.
+It will start on 0.50f
