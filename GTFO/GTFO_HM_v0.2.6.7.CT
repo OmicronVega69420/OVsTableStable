@@ -1,0 +1,1802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2442</ID>
+      <Description>"FluffyWafflesIX - [Rundown #4]"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>FF00FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2443</ID>
+          <Description>"[Player Settings]"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2485</ID>
+              <Description>"Weapon Ammo"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2440</ID>
+                  <Description>"Freeze Primary &amp; Secondary Ammo"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+29A246) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop [rdi+00000220]
+originalcode:
+//dec [rdi+00000220]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+29A246:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+29A246:
+dec [rdi+00000220]
+//Alt: db FF 8F 20 02 00 00
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2489</ID>
+                  <Description>"Freeze Shotgun Ammo"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+5EF084) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop [rbx+00000220]
+originalcode:
+//dec [rbx+00000220]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+5EF084:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+5EF084:
+dec [rbx+00000220]
+//Alt: db FF 8B 20 02 00 00
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2447</ID>
+              <Description>"Weapons"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2484</ID>
+                  <Description>"No Burst Cooldown"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+2968F2) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 5
+originalcode:
+//movss [rbx+3C],xmm0
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+2968F2:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+2968F2:
+movss [rbx+3C],xmm0
+//Alt: db F3 0F 11 43 3C
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2501</ID>
+                  <Description>"No Weapon Charge Up"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+296FB6) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 8
+originalcode:
+//addss xmm0,[rax+000000BC]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+296FB6:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+296FB6:
+addss xmm0,[rax+000000BC]
+//Alt: db F3 0F 58 80 BC 00 00 00
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2455</ID>
+                  <Description>"No Weapon Recoil"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(norecoil,Weapon.ApplyRecoil+000, Weapon.ApplyRecoil+40, ?? 55 53 56 48 8D 6C 24 B9 48 81 EC)
+norecoil:
+db C3
+
+[DISABLE]
+aobscanRegion(norecoil,Weapon.ApplyRecoil+000, Weapon.ApplyRecoil+40, C3 55 53 56 48 8D 6C 24 B9 48 81 EC)
+norecoil:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2505</ID>
+                  <Description>"No Hipfire Spread"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+299447) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 6
+originalcode:
+//mov [rdi+00000210],ecx
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+299447:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+299447:
+mov [rdi+00000210],ecx
+//Alt: db 89 8F 10 02 00 00
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2508</ID>
+                  <Description>"Multi-Shot (Related To Rapid Fire)"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+297333) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 5
+originalcode:
+//movss [rbx+38],xmm0
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+297333:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+297333:
+movss [rbx+38],xmm0
+//Alt: db F3 0F 11 43 38
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2448</ID>
+              <Description>"Equipment"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2496</ID>
+                  <Description>"Equipment Ammo"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>2487</ID>
+                      <Description>"Freeze Mines &amp; Glue Ammo"</Description>
+                      <LastState/>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+32319D) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 5
+originalcode:
+//movss [rbx+18],xmm6
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+32319D:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+32319D:
+movss [rbx+18],xmm6
+//Alt: db F3 0F 11 73 18
+</AssemblerScript>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2493</ID>
+                  <Description>"Glue Gun"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>2492</ID>
+                      <Description>"Instant Full Charge"</Description>
+                      <LastState/>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+33FC03) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 9
+originalcode:
+//movss xmm10,[rbx+00000218]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+33FC03:
+jmp newmem
+nop 4
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+33FC03:
+movss xmm10,[rbx+00000218]
+//Alt: db F3 44 0F 10 93 18 02 00 00
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>2498</ID>
+                      <Description>"No Cooldown"</Description>
+                      <LastState/>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+33DF1C) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 8
+originalcode:
+//movss [rdi+00000210],xmm1
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+33DF1C:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+33DF1C:
+movss [rdi+00000210],xmm1
+//Alt: db F3 0F 11 8F 10 02 00 00
+</AssemblerScript>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2495</ID>
+                  <Description>"Mines (Not Started)"</Description>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2494</ID>
+                  <Description>"Bio Tracker"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>2502</ID>
+                      <Description>"Instant Tag"</Description>
+                      <LastState/>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+2A0564) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 8
+originalcode:
+//movss xmm1,[rbx+000002C4]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+2A0564:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+2A0564:
+movss xmm1,[rbx+000002C4]
+//Alt: db F3 0F 10 8B C4 02 00 00
+</AssemblerScript>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2497</ID>
+                  <Description>"Sentries"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>2527</ID>
+                      <Description>"Rapid Fire (Burst Sentry Only)"</Description>
+                      <LastState/>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+58C9CB) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 4
+originalcode:
+//comiss xmm0,[rbx+28]
+jbe GameAssembly.dll+58CA55
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+58C9CB:
+jmp newmem
+nop 5
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+58C9CB:
+comiss xmm0,[rbx+28]
+jbe GameAssembly.dll+58CA55
+//Alt: db 0F 2F 43 28 0F 86 80 00 00 00
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>2530</ID>
+                      <Description>"Rapid Fire (Auto Sentry Only)"</Description>
+                      <LastState/>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+58C8F2) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 4
+originalcode:
+//comiss xmm0,[rbx+24]
+jna GameAssembly.dll+58C916
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+58C8F2:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+58C8F2:
+comiss xmm0,[rbx+24]
+jna GameAssembly.dll+58C916
+//Alt: db 0F 2F 43 24 76 1E
+</AssemblerScript>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2449</ID>
+              <Description>"Consumables / Pocket Items"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2490</ID>
+                  <Description>"+Throwing Power (Best With Fog Repellers)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+3231DC) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 5
+originalcode:
+//movaps xmm6,[rsp+40]
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+3231DC:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+3231DC:
+movaps xmm6,[rsp+40]
+//Alt: db 0F 28 74 24 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2500</ID>
+                  <Description>"Max Consumable Ammo (Disable When Using Pocket Items)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+323183) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 3
+originalcode:
+//movaps xmm0,xmm6
+call UnityEngine.Mathf.Clamp
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+323183:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+323183:
+movaps xmm0,xmm6
+call UnityEngine.Mathf.Clamp
+//Alt: db 0F 28 C6 E8 F5 A4 03 01
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2511</ID>
+                  <Description>"Freeze Consumable Ammo + Pocket Items"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"GameAssembly.dll"+32319D) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+nop 5
+originalcode:
+//movss [rbx+18],xmm6
+
+exit:
+jmp returnhere
+
+"GameAssembly.dll"+32319D:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"GameAssembly.dll"+32319D:
+movss [rbx+18],xmm6
+//Alt: db F3 0F 11 73 18
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2467</ID>
+              <Description>"Damage Types [Host Required]"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2456</ID>
+                  <Description>"Receive No Fall Damage"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(nofall,Dam_SyncedDamageBase.FallDamage+000, Dam_SyncedDamageBase.FallDamage+40, ?? 57 48 83 EC 40)
+nofall:
+db C3
+
+[DISABLE]
+aobscanRegion(nofall,Dam_SyncedDamageBase.FallDamage+000, Dam_SyncedDamageBase.FallDamage+40, C3 57 48 83 EC 40)
+nofall:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2461</ID>
+                  <Description>"Receive No Air Damage (?)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noairdmg,Dam_PlayerDamageLocal.ReceiveNoAirDamage+000, Dam_PlayerDamageLocal.ReceiveNoAirDamage+40, ?? 89 54 24 10 53 48 83 EC 70)
+noairdmg:
+db C3
+
+[DISABLE]
+aobscanRegion(noairdmg,Dam_PlayerDamageLocal.ReceiveNoAirDamage+000, Dam_PlayerDamageLocal.ReceiveNoAirDamage+40, ?? 89 54 24 10 53 48 83 EC 70)
+noairdmg:
+db 66
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2462</ID>
+                  <Description>"Receive No Melee Damage (?)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(nomeleedmg,Dam_PlayerDamageLocal.ReceiveMeleeDamage+000, Dam_PlayerDamageLocal.ReceiveMeleeDamage+40, 48 ?? 5C 24 18 57 48 83 EC 70)
+nomeleedmg:
+db 48 C3
+
+[DISABLE]
+aobscanRegion(nomeleedmg,Dam_PlayerDamageLocal.ReceiveMeleeDamage+000, Dam_PlayerDamageLocal.ReceiveMeleeDamage+40, 48 C3 5C 24 18 57 48 83 EC 70)
+nomeleedmg:
+db 48 89
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2463</ID>
+                  <Description>"Receive No Fire Damage (?)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(nofiredmg,Dam_PlayerDamageLocal.ReceiveFireDamage+000, Dam_PlayerDamageLocal.ReceiveFireDamage+40, ?? 54 24 10 53 48 83 EC 70)
+nofiredmg:
+db C3
+
+[DISABLE]
+aobscanRegion(nofiredmg,Dam_PlayerDamageLocal.ReceiveFireDamage+000, Dam_PlayerDamageLocal.ReceiveFireDamage+40, C3 54 24 10 53 48 83 EC 70)
+nofiredmg:
+db 89
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2464</ID>
+                  <Description>"Receive No Explosion Damage"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noexplosiondmg,Dam_PlayerDamageLocal.ReceiveExplosionDamage+000, Dam_PlayerDamageLocal.ReceiveExplosionDamage+50, 48 ?? 5C 24 08 57 48 83 EC 70)
+noexplosiondmg:
+db 48 C3
+
+[DISABLE]
+aobscanRegion(noexplosiondmg,Dam_PlayerDamageLocal.ReceiveExplosionDamage+000, Dam_PlayerDamageLocal.ReceiveExplosionDamage+50, 48 C3 5C 24 08 57 48 83 EC 70)
+noexplosiondmg:
+db 48 89
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2466</ID>
+                  <Description>"Receive No Bullet Damage"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(nobulletdmg,Dam_PlayerDamageLocal.ReceiveBulletDamage+000, Dam_PlayerDamageLocal.ReceiveBulletDamage+50, 48 ?? 74 24 10 57 48 81 EC)
+nobulletdmg:
+db 48 C3
+
+[DISABLE]
+aobscanRegion(nobulletdmg,Dam_PlayerDamageLocal.ReceiveBulletDamage+000, Dam_PlayerDamageLocal.ReceiveBulletDamage+50, 48 C3 74 24 10 57 48 81 EC)
+nobulletdmg:
+db 48 89
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2450</ID>
+              <Description>"Misc"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2454</ID>
+                  <Description>"God Mode"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(godmode,Dam_PlayerDamageBase.OnIncomingDamage+000, Dam_PlayerDamageBase.OnIncomingDamage+40, ?? 89 74 24 10 57 48 83 EC 40)
+godmode:
+db C3
+
+[DISABLE]
+aobscanRegion(godmode,Dam_PlayerDamageBase.OnIncomingDamage+000, Dam_PlayerDamageBase.OnIncomingDamage+40, C3 89 74 24 10 57 48 83 EC 40)
+godmode:
+db 48
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2444</ID>
+          <Description>"[Enemy Settings]"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2458</ID>
+              <Description>"General"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1992</ID>
+                  <Description>"NoTarget (Enemy Ignores You)"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noattack,Enemies.EB_InCombat.UpdateBehaviour+000, Enemies.EB_InCombat.UpdateBehaviour+40, ?? 53 48 83 EC 70)
+noattack:
+db C3
+
+[DISABLE]
+aobscanRegion(noattack,Enemies.EB_InCombat.UpdateBehaviour+000, Enemies.EB_InCombat.UpdateBehaviour+40, C3 53 48 83 EC 70)
+noattack:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1996</ID>
+                  <Description>"Enemies Stay Asleep"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(ignore,Enemies.EB_Hibernating.UpdateDetection+000, Enemies.EB_Hibernating.UpdateDetection+40, ?? 55 53 41 57 48 8D 6C 24 B9)
+ignore:
+db C3
+
+[DISABLE]
+aobscanRegion(ignore,Enemies.EB_Hibernating.UpdateDetection+000, Enemies.EB_Hibernating.UpdateDetection+40, C3 55 53 41 57 48 8D 6C 24 B9)
+ignore:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2515</ID>
+                  <Description>"Remove Enemy Cost [Host Required]"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(getcost,EnemyCostManager.GetCost+000, EnemyCostManager.GetCost+40, ?? 53 48 83 EC 20)
+getcost:
+db C3
+
+[DISABLE]
+aobscanRegion(getcost,EnemyCostManager.GetCost+000, EnemyCostManager.GetCost+40, C3 53 48 83 EC 20)
+getcost:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2475</ID>
+              <Description>"Damage Types (Enemies only)"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2474</ID>
+                  <Description>"Receive No Melee Damage"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(emelee,Dam_EnemyDamageBase.ReceiveMeleeDamage+000, Dam_EnemyDamageBase.ReceiveMeleeDamage+40, ?? 55 53 57 48 8D 6C 24 E0)
+emelee:
+db C3
+
+[DISABLE]
+aobscanRegion(emelee,Dam_EnemyDamageBase.ReceiveMeleeDamage+000, Dam_EnemyDamageBase.ReceiveMeleeDamage+40, C3 55 53 57 48 8D 6C 24 E0)
+emelee:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2476</ID>
+                  <Description>"Receive No Explosion Damage"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(eexplosion,Dam_EnemyDamageBase.ReceiveExplosionDamage+000, Dam_EnemyDamageBase.ReceiveExplosionDamage+40, ?? 55 53 57 48 8D 6C 24 B9)
+eexplosion:
+db C3
+
+[DISABLE]
+aobscanRegion(eexplosion,Dam_EnemyDamageBase.ReceiveExplosionDamage+000, Dam_EnemyDamageBase.ReceiveExplosionDamage+40, C3 55 53 57 48 8D 6C 24 B9)
+eexplosion:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2477</ID>
+                  <Description>"Receive No Bullet Damage"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(ebullet,Dam_EnemyDamageBase.ReceiveBulletDamage+000, Dam_EnemyDamageBase.ReceiveBulletDamage+40, ?? 55 56 57 48 8D 6C 24 D0)
+ebullet:
+db C3
+
+[DISABLE]
+aobscanRegion(ebullet,Dam_EnemyDamageBase.ReceiveBulletDamage+000, Dam_EnemyDamageBase.ReceiveBulletDamage+40, C3 55 56 57 48 8D 6C 24 D0)
+ebullet:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2459</ID>
+              <Description>"Infection Spitter / Parasite"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2457</ID>
+                  <Description>"No Parasite Damage (Explosion Damage)"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noparasitedmg,Dam_PlayerDamageLocal.ReceiveParasiteDamage+000, Dam_PlayerDamageLocal.ReceiveParasiteDamage+40, ?? 89 54 24 10 53 48 83 EC 30)
+noparasitedmg:
+db C3
+
+[DISABLE]
+aobscanRegion(noparasitedmg,Dam_PlayerDamageLocal.ReceiveParasiteDamage+000, Dam_PlayerDamageLocal.ReceiveParasiteDamage+40, C3 89 54 24 10 53 48 83 EC 30)
+noparasitedmg:
+db 66
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2460</ID>
+                  <Description>"No Trap Damage (For Parasites only)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noparatrapdmg,Dam_PlayerDamageLocal.ReceiveParasiteTrapDamage+000, Dam_PlayerDamageLocal.ReceiveParasiteTrapDamage+40, 48 ?? 54 24 10 55 53 57 48 8D 6C 24 B9 48 81 EC)
+noparatrapdmg:
+db 48 C3
+
+[DISABLE]
+aobscanRegion(noparatrapdmg,Dam_PlayerDamageLocal.ReceiveParasiteTrapDamage+000, Dam_PlayerDamageLocal.ReceiveParasiteTrapDamage+40, 48 ?? 54 24 10 55 53 57 48 8D 6C 24 B9 48 81 EC)
+noparatrapdmg:
+db 48 89
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2469</ID>
+              <Description>"Tank / Tank Grab"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2470</ID>
+                  <Description>"Disable Tank Grab (?)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(tankgrab,Dam_PlayerDamageBase.set_GrabbedByTank+000, Dam_PlayerDamageBase.set_GrabbedByTank+40, ?? 89 5C 24 08 57 48 83 EC 20)
+tankgrab:
+db 48 C3
+
+[DISABLE]
+aobscanRegion(tankgrab,Dam_PlayerDamageBase.set_GrabbedByTank+000, Dam_PlayerDamageBase.set_GrabbedByTank+40, 48 C3 5C 24 08 57 48 83 EC 20)
+tankgrab:
+db 48 89
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2473</ID>
+                  <Description>"Receive No Tank Grab Damage"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(tankgrabdmg,Dam_PlayerDamageBase.ReceiveTentacleTankGrabDamage+000, Dam_PlayerDamageBase.ReceiveTentacleTankGrabDamage+40, ?? 54 24 10 53 48 83 EC 20)
+tankgrabdmg:
+db C3
+
+[DISABLE]
+aobscanRegion(tankgrabdmg,Dam_PlayerDamageBase.ReceiveTentacleTankGrabDamage+000, Dam_PlayerDamageBase.ReceiveTentacleTankGrabDamage+40, C3 54 24 10 53 48 83 EC 20)
+tankgrabdmg:
+db 48
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2522</ID>
+              <Description>"Birther [Abilities]"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2518</ID>
+                  <Description>"No Birth"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(nobirth,Enemies.ES_BirtherGiveBirth.DoStartGiveBirth+000, Enemies.ES_BirtherGiveBirth.DoStartGiveBirth+40, ?? 53 48 83 EC 20)
+nobirth:
+db C3
+
+[DISABLE]
+aobscanRegion(nobirth,Enemies.ES_BirtherGiveBirth.DoStartGiveBirth+000, Enemies.ES_BirtherGiveBirth.DoStartGiveBirth+40, C3 53 48 83 EC 20)
+nobirth:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2523</ID>
+                  <Description>"No Fog Sphere"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(nofogsphere,Enemies.ES_TriggerFogSphere.ActivateState+000, Enemies.ES_TriggerFogSphere.ActivateState+40, ?? 53 48 83 EC 20)
+nofogsphere:
+db C3
+
+[DISABLE]
+aobscanRegion(nofogsphere,Enemies.ES_TriggerFogSphere.ActivateState+000, Enemies.ES_TriggerFogSphere.ActivateState+40, C3 53 48 83 EC 20)
+nofogsphere:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2481</ID>
+              <Description>"Scout"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2479</ID>
+                  <Description>"Disable Antenna Detection"</Description>
+                  <LastState Activated="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(scoutdtc,ES_ScoutDetection.ActivateState+000, ES_ScoutDetection.ActivateState+40, ?? 53 48 83 EC 60)
+scoutdtc:
+db C3
+
+[DISABLE]
+aobscanRegion(scoutdtc,ES_ScoutDetection.ActivateState+000, ES_ScoutDetection.ActivateState+40, C3 53 48 83 EC 60)
+scoutdtc:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2480</ID>
+                  <Description>"Stationary + No Antenna (Collision Will Trigger Scout Scream)"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(scoutspawnantenna,ES_ScoutDetection.SpawnAntennaDetection+000, ES_ScoutDetection.SpawnAntennaDetection+40, ?? 53 48 81 EC)
+scoutspawnantenna:
+db C3
+
+[DISABLE]
+aobscanRegion(scoutspawnantenna,ES_ScoutDetection.SpawnAntennaDetection+000, ES_ScoutDetection.SpawnAntennaDetection+40, C3 53 48 81 EC)
+scoutspawnantenna:
+db 40
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2445</ID>
+          <Description>"[Map Settings]"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2446</ID>
+          <Description>"[QoL Settings]"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2441</ID>
+              <Description>"No Flinch"</Description>
+              <LastState Activated="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noattack,Dam_PlayerDamageLocal.Hitreact+000, Dam_PlayerDamageLocal.Hitreact+40, ?? 89 5C 24 18)
+noattack:
+db C3
+
+[DISABLE]
+aobscanRegion(noattack,Dam_PlayerDamageLocal.Hitreact+000, Dam_PlayerDamageLocal.Hitreact+40, C3 89 5C 24 18)
+noattack:
+db 48
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2516</ID>
+              <Description>"No Muzzle Flash"</Description>
+              <LastState Activated="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+{$asm}
+aobscanRegion(noflash,EX_SpriteMuzzleFlash.Play+000, EX_SpriteMuzzleFlash.Play+40, ?? 89 5C 24 10 57 48 83 EC 70)
+noflash:
+db C3
+
+[DISABLE]
+aobscanRegion(noflash,EX_SpriteMuzzleFlash.Play+000, EX_SpriteMuzzleFlash.Play+40, C3 89 5C 24 10 57 48 83 EC 70)
+noflash:
+db 48
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="20000000">
+      <Description>Change of movaps [rsp+70],xmm6</Description>
+      <AddressString>GameAssembly.dll+5F8528</AddressString>
+      <Before>
+        <Byte>05</Byte>
+        <Byte>80</Byte>
+        <Byte>B4</Byte>
+        <Byte>40</Byte>
+        <Byte>02</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>29</Byte>
+        <Byte>74</Byte>
+        <Byte>24</Byte>
+        <Byte>70</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>88</Byte>
+        <Byte>B8</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of mov rcx,[rax+000000B8]</Description>
+      <AddressString>GameAssembly.dll+5F852D</AddressString>
+      <Before>
+        <Byte>0F</Byte>
+        <Byte>29</Byte>
+        <Byte>74</Byte>
+        <Byte>24</Byte>
+        <Byte>70</Byte>
+      </Before>
+      <Actual>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>88</Byte>
+        <Byte>B8</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>41</Byte>
+        <Byte>0C</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of movsd [rdi+4C],xmm0</Description>
+      <AddressString>GameAssembly.dll+5F8539</AddressString>
+      <Before>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>41</Byte>
+        <Byte>0C</Byte>
+      </Before>
+      <Actual>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>47</Byte>
+        <Byte>4C</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>41</Byte>
+        <Byte>14</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of movsd [rdi+58],xmm0</Description>
+      <AddressString>GameAssembly.dll+5F856B</AddressString>
+      <Before>
+        <Byte>C0</Byte>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>47</Byte>
+        <Byte>58</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>40</Byte>
+        <Byte>08</Byte>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of movsd xmm0,[rax]</Description>
+      <AddressString>GameAssembly.dll+5F8567</AddressString>
+      <Before>
+        <Byte>BD</Byte>
+        <Byte>00</Byte>
+        <Byte>45</Byte>
+        <Byte>33</Byte>
+        <Byte>C0</Byte>
+      </Before>
+      <Actual>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>47</Byte>
+        <Byte>58</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of movsd xmm0,[rdi+40]</Description>
+      <AddressString>GameAssembly.dll+5F8573</AddressString>
+      <Before>
+        <Byte>47</Byte>
+        <Byte>58</Byte>
+        <Byte>8B</Byte>
+        <Byte>40</Byte>
+        <Byte>08</Byte>
+      </Before>
+      <Actual>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>47</Byte>
+        <Byte>40</Byte>
+      </Actual>
+      <After>
+        <Byte>89</Byte>
+        <Byte>47</Byte>
+        <Byte>60</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of movsd [rbx+00000098],xmm0</Description>
+      <AddressString>GameAssembly.dll+5F89B4</AddressString>
+      <Before>
+        <Byte>CB</Byte>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>F2</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>83</Byte>
+        <Byte>98</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>43</Byte>
+        <Byte>64</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of mov [rbx+000000A0],eax</Description>
+      <AddressString>GameAssembly.dll+5F89C9</AddressString>
+      <Before>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>5C</Byte>
+        <Byte>43</Byte>
+        <Byte>68</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>83</Byte>
+        <Byte>A0</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>43</Byte>
+        <Byte>64</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of movss [rbx+68],xmm6</Description>
+      <AddressString>GameAssembly.dll+5F8936</AddressString>
+      <Before>
+        <Byte>43</Byte>
+        <Byte>58</Byte>
+        <Byte>8B</Byte>
+        <Byte>73</Byte>
+        <Byte>60</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>73</Byte>
+        <Byte>68</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>0D</Byte>
+        <Byte>F6</Byte>
+        <Byte>B4</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of movss xmm0,[rax+1C]</Description>
+      <AddressString>GameAssembly.dll+58C9C6</AddressString>
+      <Before>
+        <Byte>81</Byte>
+        <Byte>B8</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>40</Byte>
+        <Byte>1C</Byte>
+      </Actual>
+      <After>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>43</Byte>
+        <Byte>28</Byte>
+        <Byte>0F</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of comiss xmm0,[rbx+28]</Description>
+      <AddressString>GameAssembly.dll+58C9CB</AddressString>
+      <Before>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>40</Byte>
+        <Byte>1C</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>43</Byte>
+        <Byte>28</Byte>
+      </Actual>
+      <After>
+        <Byte>0F</Byte>
+        <Byte>86</Byte>
+        <Byte>80</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of mov [rsp+08],rbx</Description>
+      <AddressString>GameAssembly.dll+58D910</AddressString>
+      <Before>
+        <Byte>EA</Byte>
+        <Byte>CB</Byte>
+        <Byte>FF</Byte>
+        <Byte>CC</Byte>
+        <Byte>CC</Byte>
+      </Before>
+      <Actual>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>5C</Byte>
+        <Byte>24</Byte>
+        <Byte>08</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>6C</Byte>
+        <Byte>24</Byte>
+        <Byte>10</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of comiss xmm0,[rbx+24]</Description>
+      <AddressString>GameAssembly.dll+58C8F2</AddressString>
+      <Before>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>40</Byte>
+        <Byte>1C</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>43</Byte>
+        <Byte>24</Byte>
+      </Actual>
+      <After>
+        <Byte>76</Byte>
+        <Byte>1E</Byte>
+        <Byte>45</Byte>
+        <Byte>33</Byte>
+        <Byte>C0</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of movaps [rsp+30],xmm6</Description>
+      <AddressString>GameAssembly.dll+58C653</AddressString>
+      <Before>
+        <Byte>01</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>7B</Byte>
+        <Byte>48</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>29</Byte>
+        <Byte>74</Byte>
+        <Byte>24</Byte>
+        <Byte>30</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>85</Byte>
+        <Byte>FF</Byte>
+        <Byte>0F</Byte>
+        <Byte>84</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of movaps xmm7,xmm0</Description>
+      <AddressString>GameAssembly.dll+58C6A2</AddressString>
+      <Before>
+        <Byte>0D</Byte>
+        <Byte>FE</Byte>
+        <Byte>75</Byte>
+        <Byte>43</Byte>
+        <Byte>02</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>28</Byte>
+        <Byte>F8</Byte>
+      </Actual>
+      <After>
+        <Byte>F6</Byte>
+        <Byte>81</Byte>
+        <Byte>2F</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of movaps xmm6,xmm0</Description>
+      <AddressString>GameAssembly.dll+58C679</AddressString>
+      <Before>
+        <Byte>FF</Byte>
+        <Byte>4C</Byte>
+        <Byte>8B</Byte>
+        <Byte>43</Byte>
+        <Byte>48</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>28</Byte>
+        <Byte>F0</Byte>
+      </Actual>
+      <After>
+        <Byte>4D</Byte>
+        <Byte>85</Byte>
+        <Byte>C0</Byte>
+        <Byte>0F</Byte>
+        <Byte>84</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of movaps xmm3,xmm0</Description>
+      <AddressString>GameAssembly.dll+58C6EB</AddressString>
+      <Before>
+        <Byte>15</Byte>
+        <Byte>DD</Byte>
+        <Byte>02</Byte>
+        <Byte>46</Byte>
+        <Byte>02</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>28</Byte>
+        <Byte>D8</Byte>
+      </Actual>
+      <After>
+        <Byte>4C</Byte>
+        <Byte>8B</Byte>
+        <Byte>C7</Byte>
+        <Byte>B9</Byte>
+        <Byte>03</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of comiss xmm0,xmm6</Description>
+      <AddressString>GameAssembly.dll+58C73A</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>56</Byte>
+        <Byte>32</Byte>
+        <Byte>B6</Byte>
+        <Byte>FF</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>C6</Byte>
+      </Actual>
+      <After>
+        <Byte>76</Byte>
+        <Byte>16</Byte>
+        <Byte>80</Byte>
+        <Byte>7B</Byte>
+        <Byte>35</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of comiss xmm1,xmm0</Description>
+      <AddressString>GameAssembly.dll+58C7BF</AddressString>
+      <Before>
+        <Byte>4B</Byte>
+        <Byte>30</Byte>
+        <Byte>0F</Byte>
+        <Byte>5B</Byte>
+        <Byte>C9</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>C8</Byte>
+      </Actual>
+      <After>
+        <Byte>72</Byte>
+        <Byte>32</Byte>
+        <Byte>80</Byte>
+        <Byte>7B</Byte>
+        <Byte>34</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of cvtdq2ps xmm1,xmm1</Description>
+      <AddressString>GameAssembly.dll+58C815</AddressString>
+      <Before>
+        <Byte>66</Byte>
+        <Byte>0F</Byte>
+        <Byte>6E</Byte>
+        <Byte>4B</Byte>
+        <Byte>30</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>5B</Byte>
+        <Byte>C9</Byte>
+      </Actual>
+      <After>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>C1</Byte>
+        <Byte>72</Byte>
+        <Byte>C4</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of addss xmm0,xmm7</Description>
+      <AddressString>GameAssembly.dll+58C6CD</AddressString>
+      <Before>
+        <Byte>C9</Byte>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>59</Byte>
+        <Byte>C6</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>58</Byte>
+        <Byte>C7</Byte>
+      </Actual>
+      <After>
+        <Byte>E8</Byte>
+        <Byte>2A</Byte>
+        <Byte>16</Byte>
+        <Byte>DD</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of mulss xmm0,xmm6</Description>
+      <AddressString>GameAssembly.dll+58C6C9</AddressString>
+      <Before>
+        <Byte>5B</Byte>
+        <Byte>C0</Byte>
+        <Byte>0F</Byte>
+        <Byte>57</Byte>
+        <Byte>C9</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>59</Byte>
+        <Byte>C6</Byte>
+      </Actual>
+      <After>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>58</Byte>
+        <Byte>C7</Byte>
+        <Byte>E8</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of cvtdq2ps xmm0,xmm0</Description>
+      <AddressString>GameAssembly.dll+58C6C3</AddressString>
+      <Before>
+        <Byte>6E</Byte>
+        <Byte>C6</Byte>
+        <Byte>45</Byte>
+        <Byte>33</Byte>
+        <Byte>C0</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>5B</Byte>
+        <Byte>C0</Byte>
+      </Actual>
+      <After>
+        <Byte>0F</Byte>
+        <Byte>57</Byte>
+        <Byte>C9</Byte>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of movaps xmm7,[rsp+20]</Description>
+      <AddressString>GameAssembly.dll+58C6D6</AddressString>
+      <Before>
+        <Byte>E8</Byte>
+        <Byte>2A</Byte>
+        <Byte>16</Byte>
+        <Byte>DD</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>28</Byte>
+        <Byte>7C</Byte>
+        <Byte>24</Byte>
+        <Byte>20</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>85</Byte>
+        <Byte>FF</Byte>
+        <Byte>0F</Byte>
+        <Byte>84</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="80000008">
+      <Description>Change of push rdi</Description>
+      <AddressString>GameAssembly.dll+58C62A</AddressString>
+      <Before>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>74</Byte>
+        <Byte>24</Byte>
+        <Byte>10</Byte>
+      </Before>
+      <Actual>
+        <Byte>57</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>83</Byte>
+        <Byte>EC</Byte>
+        <Byte>40</Byte>
+        <Byte>80</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>
