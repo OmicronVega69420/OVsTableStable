@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Single or Host Only"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Unlimited Assault &amp; Pistol Ammo"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : ReadyOrNot-Win64-Shipping.exe
+  Version: 
+  Date   : 2022-07-06
+  Author : Vergbergler-PC
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(MagAmmo,ReadyOrNot-Win64-Shipping.exe,66 42 89 04 82 48) // should be unique
+alloc(newmem,$1000,MagAmmo)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  add [rdx+r8*4],(int)0
+  jmp return
+
+MagAmmo:
+  jmp newmem
+return:
+registersymbol(MagAmmo)
+
+[DISABLE]
+
+MagAmmo:
+  db 66 42 89 04 82
+
+unregistersymbol(MagAmmo)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: ReadyOrNot-Win64-Shipping.exe+100717B
+
+ReadyOrNot-Win64-Shipping.exe+1007151: 0F 8D 80 00 00 00     - jnl ReadyOrNot-Win64-Shipping.exe+10071D7
+ReadyOrNot-Win64-Shipping.exe+1007157: 48 8B 91 B8 10 00 00  - mov rdx,[rcx+000010B8]
+ReadyOrNot-Win64-Shipping.exe+100715E: 4C 8B C0              - mov r8,rax
+ReadyOrNot-Win64-Shipping.exe+1007161: 0F B7 04 82           - movzx eax,word ptr [rdx+rax*4]
+ReadyOrNot-Win64-Shipping.exe+1007165: 66 0F 6E C8           - movd xmm1,eax
+ReadyOrNot-Win64-Shipping.exe+1007169: 0F 5B C9              - cvtdq2ps xmm1,xmm1
+ReadyOrNot-Win64-Shipping.exe+100716C: F3 0F 5C C8           - subss xmm1,xmm0
+ReadyOrNot-Win64-Shipping.exe+1007170: 0F 57 C0              - xorps xmm0,xmm0
+ReadyOrNot-Win64-Shipping.exe+1007173: F3 0F 5F C8           - maxss xmm1,xmm0
+ReadyOrNot-Win64-Shipping.exe+1007177: F3 0F 2C C1           - cvttss2si eax,xmm1
+// ---------- INJECTING HERE ----------
+ReadyOrNot-Win64-Shipping.exe+100717B: 66 42 89 04 82        - mov [rdx+r8*4],ax
+// ---------- DONE INJECTING  ----------
+ReadyOrNot-Win64-Shipping.exe+1007180: 48 63 81 D4 10 00 00  - movsxd  rax,dword ptr [rcx+000010D4]
+ReadyOrNot-Win64-Shipping.exe+1007187: 85 C0                 - test eax,eax
+ReadyOrNot-Win64-Shipping.exe+1007189: 78 15                 - js ReadyOrNot-Win64-Shipping.exe+10071A0
+ReadyOrNot-Win64-Shipping.exe+100718B: 3B 81 D8 0A 00 00     - cmp eax,[rcx+00000AD8]
+ReadyOrNot-Win64-Shipping.exe+1007191: 7D 0D                 - jnl ReadyOrNot-Win64-Shipping.exe+10071A0
+ReadyOrNot-Win64-Shipping.exe+1007193: 48 8B 91 D0 0A 00 00  - mov rdx,[rcx+00000AD0]
+ReadyOrNot-Win64-Shipping.exe+100719A: 48 8B 14 C2           - mov rdx,[rdx+rax*8]
+ReadyOrNot-Win64-Shipping.exe+100719E: EB 13                 - jmp ReadyOrNot-Win64-Shipping.exe+10071B3
+ReadyOrNot-Win64-Shipping.exe+10071A0: 83 B9 D8 0A 00 00 00  - cmp dword ptr [rcx+00000AD8],00
+ReadyOrNot-Win64-Shipping.exe+10071A7: 7E 0F                 - jle ReadyOrNot-Win64-Shipping.exe+10071B8
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"Unlimited Shotgun Ammo"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : ReadyOrNot-Win64-Shipping.exe
+  Version: 
+  Date   : 2022-07-07
+  Author : Vergbergler-PC
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(ShotgunAmmo,ReadyOrNot-Win64-Shipping.exe,FF 89 10 14 00 00) // should be unique
+alloc(newmem,$1000,ShotgunAmmo)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rcx+00001410],(int)32
+  jmp return
+
+ShotgunAmmo:
+  jmp newmem
+  nop
+return:
+registersymbol(ShotgunAmmo)
+
+[DISABLE]
+
+ShotgunAmmo:
+  db FF 89 10 14 00 00
+
+unregistersymbol(ShotgunAmmo)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: ReadyOrNot-Win64-Shipping.exe+108111C
+
+ReadyOrNot-Win64-Shipping.exe+10810FE: CC                    - int 3 
+ReadyOrNot-Win64-Shipping.exe+10810FF: CC                    - int 3 
+ReadyOrNot-Win64-Shipping.exe+1081100: 40 53                 - push rbx
+ReadyOrNot-Win64-Shipping.exe+1081102: 48 83 EC 20           - sub rsp,20
+ReadyOrNot-Win64-Shipping.exe+1081106: 0F 2E 0D 63 1D D3 02  - ucomiss xmm1,[ReadyOrNot-Win64-Shipping.exe+3DB2E70]
+ReadyOrNot-Win64-Shipping.exe+108110D: 8B 81 10 14 00 00     - mov eax,[rcx+00001410]
+ReadyOrNot-Win64-Shipping.exe+1081113: 48 8B D9              - mov rbx,rcx
+ReadyOrNot-Win64-Shipping.exe+1081116: 75 30                 - jne ReadyOrNot-Win64-Shipping.exe+1081148
+ReadyOrNot-Win64-Shipping.exe+1081118: 85 C0                 - test eax,eax
+ReadyOrNot-Win64-Shipping.exe+108111A: 7E 2C                 - jle ReadyOrNot-Win64-Shipping.exe+1081148
+// ---------- INJECTING HERE ----------
+ReadyOrNot-Win64-Shipping.exe+108111C: FF 89 10 14 00 00     - dec [rcx+00001410]
+// ---------- DONE INJECTING  ----------
+ReadyOrNot-Win64-Shipping.exe+1081122: 8B 81 10 14 00 00     - mov eax,[rcx+00001410]
+ReadyOrNot-Win64-Shipping.exe+1081128: 85 C0                 - test eax,eax
+ReadyOrNot-Win64-Shipping.exe+108112A: 7E 1C                 - jle ReadyOrNot-Win64-Shipping.exe+1081148
+ReadyOrNot-Win64-Shipping.exe+108112C: 48 63 C8              - movsxd  rcx,eax
+ReadyOrNot-Win64-Shipping.exe+108112F: 48 8B 83 08 14 00 00  - mov rax,[rbx+00001408]
+ReadyOrNot-Win64-Shipping.exe+1081136: 8B 54 88 FC           - mov edx,[rax+rcx*4-04]
+ReadyOrNot-Win64-Shipping.exe+108113A: 48 8B CB              - mov rcx,rbx
+ReadyOrNot-Win64-Shipping.exe+108113D: E8 CE 71 F8 FF        - call ReadyOrNot-Win64-Shipping.exe+1008310
+ReadyOrNot-Win64-Shipping.exe+1081142: 8B 83 10 14 00 00     - mov eax,[rbx+00001410]
+ReadyOrNot-Win64-Shipping.exe+1081148: 66 0F 6E C0           - movd xmm0,eax
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
